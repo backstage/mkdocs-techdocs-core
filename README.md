@@ -1,4 +1,4 @@
-# techdocs-core
+# mkdocs-techdocs-core
 
 This is the base [Mkdocs](https://mkdocs.org) plugin used when using Mkdocs with Spotify's TechDocs. It is written in Python and packages all of our Mkdocs defaults, such as theming, plugins, etc in a single plugin.
 

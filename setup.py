@@ -16,7 +16,7 @@ limitations under the License.
 from setuptools import setup, find_packages
 from os import path
 
-# read the contents of the README file in the current directory
+# Read the contents of the README file in the current directory
 this_dir = path.abspath(path.dirname(__file__))
 with open(path.join(this_dir, "README.md"), encoding="utf-8") as file:
     long_description = file.read()
@@ -24,11 +24,12 @@ with open(path.join(this_dir, "README.md"), encoding="utf-8") as file:
 setup(
     name="mkdocs-techdocs-core",
     version="0.0.12",
-    description="A Mkdocs package that contains TechDocs defaults",
+    description="The core MkDocs plugin used by Backstage's TechDocs as a wrapper around "
+    "multiple MkDocs plugins and Python Markdown extensions",
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords="mkdocs",
-    url="https://github.com/backstage/backstage",
+    url="https://github.com/backstage/mkdocs-techdocs-core",
     author="TechDocs Core",
     author_email="pulp-fiction@spotify.com",
     license="Apache-2.0",

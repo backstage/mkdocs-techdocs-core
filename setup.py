@@ -23,12 +23,12 @@ with open(path.join(this_dir, "README.md"), encoding="utf-8") as file:
 
 setup(
     name="mkdocs-techdocs-core",
-    version="0.0.11",
+    version="0.0.12",
     description="A Mkdocs package that contains TechDocs defaults",
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords="mkdocs",
-    url="https://github.com/spotify/backstage",
+    url="https://github.com/backstage/backstage",
     author="TechDocs Core",
     author_email="pulp-fiction@spotify.com",
     license="Apache-2.0",

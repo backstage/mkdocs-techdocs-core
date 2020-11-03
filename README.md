@@ -56,7 +56,7 @@ TechDocs Core plugin:
 Plugins:
 
 - [search](https://www.mkdocs.org/user-guide/configuration/#search)
-- [mkdocs-monorepo-plugin](https://github.com/spotify/mkdocs-monorepo-plugin)
+- [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin)
 
 Extensions:
 
@@ -82,9 +82,13 @@ Extensions:
 
 ## Changelog
 
+### 0.0.12
+
+- Updated home repository to be the new https://github.com/backstage/mkdocs-techdocs-core
+
 ### 0.0.11
 
-- Any MkDocs plugin configurations from mkdocs.yml will now work and override the default configuration. See https://github.com/spotify/backstage/issues/3017
+- Any MkDocs plugin configurations from mkdocs.yml will now work and override the default configuration. See https://github.com/backstage/backstage/issues/3017
 
 ### 0.0.10
 

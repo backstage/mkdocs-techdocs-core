@@ -55,30 +55,37 @@ TechDocs Core plugin:
 
 Plugins:
 
-- [search](https://www.mkdocs.org/user-guide/configuration/#search)
-- [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin)
+- [search](https://www.mkdocs.org/user-guide/configuration/#search): A search plugin is provided by default with MkDocs which uses lunr.js as a search engine.
+- [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin): This plugin enables you to build multiple sets of documentation in a single Mkdocs. It is designed to address writing documentation in Spotify's largest and most business-critical codebases (typically monoliths or monorepos).
 
 Extensions:
 
-- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions)
-- [toc](https://python-markdown.github.io/extensions/toc/)
-- [pymdown](https://facelessuser.github.io/pymdown-extensions/)
-  - caret
-  - critic
-  - details
-  - emoji
-  - superfences
-  - inlinehilite
-  - magiclink
-  - mark
-  - smartsymobls
-  - highlight
-  - extra
-  - tabbed
-  - tasklist
-  - tilde
-- [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/)
-- [plantuml_markdown](https://pypi.org/project/plantuml-markdown/)
+- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions): Admonitions, also known as call-outs, are an excellent choice for including side content without significantly interrupting the document flow. Material for MkDocs provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.
+- [toc](https://python-markdown.github.io/extensions/toc/): The Table of Contents extension generates a Table of Contents from a Markdown document and adds it into the resulting HTML document.
+This extension is included in the standard Markdown library.
+- [pymdown](https://facelessuser.github.io/pymdown-extensions/): PyMdown Extensions is a collection of extensions for Python Markdown.
+All extensions are found under the module namespace of pymdownx. 
+  - caret: Caret is an extension that is syntactically built around the ^ character. It adds support for inserting superscripts and adds an easy way to place <ins>text</ins> in an <*ins*> tag.
+  - critic: Critic adds handling and support of Critic Markup.
+  - details: Details creates collapsible elements with <*details*> and <*summary*> tags.
+  - emoji: Emoji makes adding emoji via Markdown easy 😄.
+  - superfences: SuperFences is like Python Markdown's fences, but better. Nest fences under lists, admonitions, and other syntaxes. You can even create special custom fences for content like UML.
+  - inlinehilite: InlineHilite highlights inline code: from module import function as func.
+  - magiclink: MagicLink linkafies URL and email links without having to wrap them in Markdown syntax. Also, shortens repository issue, pull request, and commit links automatically for popular code hosting providers. You can even use special shorthand syntax to link to issues, diffs, and even mention people
+  - mark: Mark allows you to mark words easily.
+  - smartsymobls: SmartSymbols inserts commonly used Unicode characters via simple ASCII representations: =/= → ≠.
+  - highlight: Highlight allows you to configure the syntax highlighting of SuperFences and InlineHilite. Also passes standard Markdown indented code blocks through the syntax highlighter.
+  - extra: Extra is just like Python Markdown's Extra package except it uses PyMdown Extensions to substitute similar extensions.
+  - tabbed: Tabbed allows for tabbed Markdown content.
+  - tasklist: Tasklist allows inserting lists with check boxes.
+  - tilde: Tilde is syntactically built around the ~ character. It adds support for inserting subscripts and adds an easy way to place text in a <*del*> tag.
+- [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/): A Python Markdown extension replaces inline Graphviz definitions with inline SVGs or PNGs.
+Activate the inline_graphviz extension. For example, with Mkdocs, you add a stanza to mkdocs.yml:
+  
+  markdown_extensions:
+      inline_graphviz
+  
+- [plantuml_markdown](https://pypi.org/project/plantuml-markdown/): This plugin implements a block extension which can be used to specify a PlantUML diagram which will be converted into an image and inserted in the document.
 
 ## Changelog
 

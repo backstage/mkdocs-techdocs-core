@@ -82,6 +82,10 @@ Extensions:
 
 ## Changelog
 
+### 0.0.13
+
+- Fixed issue where the whole temp directory could be included in the built site output. [#7](https://github.com/backstage/mkdocs-techdocs-core/issues/7)
+
 ### 0.0.12
 
 - Updated home repository to be the new https://github.com/backstage/mkdocs-techdocs-core

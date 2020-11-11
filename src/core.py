@@ -14,21 +14,27 @@
  * limitations under the License.
 """
 
+import tempfile
+import os
 from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
 from mkdocs.contrib.search import SearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
-import tempfile
-import os
 
 
 class TechDocsCore(BasePlugin):
+
+    def __init__(self):
+        # This directory will be removed automatically once the docs are built
+        # MkDocs needs a directory for the theme with the `techdocs_metadata.json` file
+        self.tmp_dir_techdocs_theme = tempfile.TemporaryDirectory()
+
     def on_config(self, config):
-        fp = open(os.path.join(tempfile.gettempdir(), "techdocs_metadata.json"), "w+")
-        fp.write(
-            '{\n  "site_name": "{{ config.site_name }}",\n  "site_description": "{{ config.site_description }}"\n}'
-        )
+        with open(os.path.join(self.tmp_dir_techdocs_theme.name, "techdocs_metadata.json"), "w+") as fp:
+            fp.write(
+                '{\n  "site_name": "{{ config.site_name }}",\n  "site_description": "{{ config.site_description }}"\n}'
+            )
 
         mdx_configs_override = {}
         if "mdx_configs" in config:
@@ -41,7 +47,7 @@ class TechDocsCore(BasePlugin):
                 "techdocs_metadata.json",
             ],
         )
-        config["theme"].dirs.append(tempfile.gettempdir())
+        config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
 
         # Plugins
         del config["plugins"]["techdocs-core"]

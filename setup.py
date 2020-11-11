@@ -23,7 +23,7 @@ with open(path.join(this_dir, "README.md"), encoding="utf-8") as file:
 
 setup(
     name="mkdocs-techdocs-core",
-    version="0.0.12",
+    version="0.0.13",
     description="The core MkDocs plugin used by Backstage's TechDocs as a wrapper around "
     "multiple MkDocs plugins and Python Markdown extensions",
     long_description=long_description,

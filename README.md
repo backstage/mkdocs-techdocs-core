@@ -41,9 +41,11 @@ See the `README.md` located in the `techdocs-container/` folder for more details
 
 ## Linting
 
+We use [black](https://github.com/psf/black) as our linter. Please run it against your code before submitting a pull request.
+
 ```bash
-pip install -r requirements.txt
-python -m black src/
+pip install black
+black .
 ```
 
 **Note:** This will write to all Python files in `src/` with the formatted code. If you would like to only check to see if it passes, simply append the `--check` flag.
@@ -64,7 +66,7 @@ Extensions:
 - [toc](https://python-markdown.github.io/extensions/toc/): The Table of Contents extension generates a Table of Contents from a Markdown document and adds it into the resulting HTML document.
 This extension is included in the standard Markdown library.
 - [pymdown](https://facelessuser.github.io/pymdown-extensions/): PyMdown Extensions is a collection of extensions for Python Markdown.
-All extensions are found under the module namespace of pymdownx. 
+All extensions are found under the module namespace of pymdownx.
   - caret: Caret is an extension that is syntactically built around the ^ character. It adds support for inserting superscripts and adds an easy way to place <ins>text</ins> in an <*ins*> tag.
   - critic: Critic adds handling and support of Critic Markup.
   - details: Details creates collapsible elements with <*details*> and <*summary*> tags.
@@ -81,10 +83,10 @@ All extensions are found under the module namespace of pymdownx.
   - tilde: Tilde is syntactically built around the ~ character. It adds support for inserting subscripts and adds an easy way to place text in a <*del*> tag.
 - [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/): A Python Markdown extension replaces inline Graphviz definitions with inline SVGs or PNGs.
 Activate the inline_graphviz extension. For example, with Mkdocs, you add a stanza to mkdocs.yml:
-  
+
   markdown_extensions:
       inline_graphviz
-  
+
 - [plantuml_markdown](https://pypi.org/project/plantuml-markdown/): This plugin implements a block extension which can be used to specify a PlantUML diagram which will be converted into an image and inserted in the document.
 
 ## Changelog

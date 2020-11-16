@@ -24,14 +24,16 @@ from pymdownx.emoji import to_svg
 
 
 class TechDocsCore(BasePlugin):
-
     def __init__(self):
         # This directory will be removed automatically once the docs are built
         # MkDocs needs a directory for the theme with the `techdocs_metadata.json` file
         self.tmp_dir_techdocs_theme = tempfile.TemporaryDirectory()
 
     def on_config(self, config):
-        with open(os.path.join(self.tmp_dir_techdocs_theme.name, "techdocs_metadata.json"), "w+") as fp:
+        with open(
+            os.path.join(self.tmp_dir_techdocs_theme.name, "techdocs_metadata.json"),
+            "w+",
+        ) as fp:
             fp.write(
                 '{\n  "site_name": "{{ config.site_name }}",\n  "site_description": "{{ config.site_description }}"\n}'
             )

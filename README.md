@@ -1,8 +1,8 @@
 # mkdocs-techdocs-core
 
-This is the base [Mkdocs](https://mkdocs.org) plugin used when using Mkdocs with Spotify's TechDocs. It is written in Python and packages all of our Mkdocs defaults, such as theming, plugins, etc in a single plugin.
+This is the base [Mkdocs](https://mkdocs.org) plugin used when using Mkdocs with Spotify's [TechDocs](https://backstage.io/docs/features/techdocs/techdocs-overview). It is written in Python and packages all of our Mkdocs defaults, such as theming, plugins, etc in a single plugin.
 
-[Python Package](https://pypi.org/project/mkdocs-techdocs-core/)
+[![Package on PyPI](https://img.shields.io/pypi/v/mkdocs-techdocs-core)](https://pypi.org/project/mkdocs-techdocs-core/)
 
 ## Usage
 
@@ -25,7 +25,9 @@ plugins:
   - techdocs-core
 ```
 
-## Running Locally
+## Development
+
+### Running Locally
 
 You can install this package locally using `pip` and the `--editable` flag used for making developing Python packages.
 
@@ -35,13 +37,7 @@ pip install --editable .
 
 You'll then have the `techdocs-core` package available to use in Mkdocs and `pip` will point the dependency to this folder.
 
-## Running with Docker
-
-In the parent `Dockerfile` we add this folder to the build and install the package locally in the container. In the future, we'll probably move away from this approach and have it download directly from a Python registry (and this folder will publish to one).
-
-See the `README.md` located in the `techdocs-container/` folder for more details on how to build and run the Docker container.
-
-## Linting
+### Linting
 
 We use [black](https://github.com/psf/black) as our linter. Please run it against your code before submitting a pull request.
 
@@ -51,6 +47,10 @@ black .
 ```
 
 **Note:** This will write to all Python files in `src/` with the formatted code. If you would like to only check to see if it passes, simply append the `--check` flag.
+
+### Release flow
+
+Update the version in `setup.py` to trigger a new release workflow on [GitHub Actions](.github/workflows/pypi-publish.yml). Make sure to update the Changelog in the README as well.
 
 ## MkDocs plugins and extensions
 
@@ -66,12 +66,12 @@ Extensions:
 
 - [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions): Admonitions, also known as call-outs, are an excellent choice for including side content without significantly interrupting the document flow. Material for MkDocs provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.
 - [toc](https://python-markdown.github.io/extensions/toc/): The Table of Contents extension generates a Table of Contents from a Markdown document and adds it into the resulting HTML document.
-This extension is included in the standard Markdown library.
+  This extension is included in the standard Markdown library.
 - [pymdown](https://facelessuser.github.io/pymdown-extensions/): PyMdown Extensions is a collection of extensions for Python Markdown.
-All extensions are found under the module namespace of pymdownx.
-  - caret: Caret is an extension that is syntactically built around the ^ character. It adds support for inserting superscripts and adds an easy way to place <ins>text</ins> in an <*ins*> tag.
+  All extensions are found under the module namespace of pymdownx.
+  - caret: Caret is an extension that is syntactically built around the ^ character. It adds support for inserting superscripts and adds an easy way to place <ins>text</ins> in an <_ins_> tag.
   - critic: Critic adds handling and support of Critic Markup.
-  - details: Details creates collapsible elements with <*details*> and <*summary*> tags.
+  - details: Details creates collapsible elements with <_details_> and <_summary_> tags.
   - emoji: Emoji makes adding emoji via Markdown easy 😄.
   - superfences: SuperFences is like Python Markdown's fences, but better. Nest fences under lists, admonitions, and other syntaxes. You can even create special custom fences for content like UML.
   - inlinehilite: InlineHilite highlights inline code: from module import function as func.
@@ -82,12 +82,9 @@ All extensions are found under the module namespace of pymdownx.
   - extra: Extra is just like Python Markdown's Extra package except it uses PyMdown Extensions to substitute similar extensions.
   - tabbed: Tabbed allows for tabbed Markdown content.
   - tasklist: Tasklist allows inserting lists with check boxes.
-  - tilde: Tilde is syntactically built around the ~ character. It adds support for inserting subscripts and adds an easy way to place text in a <*del*> tag.
+  - tilde: Tilde is syntactically built around the ~ character. It adds support for inserting subscripts and adds an easy way to place text in a <_del_> tag.
 - [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/): A Python Markdown extension replaces inline Graphviz definitions with inline SVGs or PNGs.
-Activate the inline_graphviz extension. For example, with Mkdocs, you add a stanza to mkdocs.yml:
-
-  markdown_extensions:
-      inline_graphviz
+  Activate the inline_graphviz extension using the [usage instructions](https://github.com/sprin/markdown-inline-graphviz#usage).
 
 - [plantuml_markdown](https://pypi.org/project/plantuml-markdown/): This plugin implements a block extension which can be used to specify a PlantUML diagram which will be converted into an image and inserted in the document.
 

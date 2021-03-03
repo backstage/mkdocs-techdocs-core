@@ -2,7 +2,7 @@
 # Note: if you update this, also update `install_requires` in setup.py
 # https://github.com/mkdocs/mkdocs
 mkdocs==1.1.2
-mkdocs-material==5.3.2
+mkdocs-material==7.0.3
 mkdocs-monorepo-plugin==0.4.5
 plantuml-markdown==3.1.2
 markdown_inline_graphviz_extension==1.1

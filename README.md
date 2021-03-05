@@ -77,7 +77,7 @@ Extensions:
   - inlinehilite: InlineHilite highlights inline code: from module import function as func.
   - magiclink: MagicLink linkafies URL and email links without having to wrap them in Markdown syntax. Also, shortens repository issue, pull request, and commit links automatically for popular code hosting providers. You can even use special shorthand syntax to link to issues, diffs, and even mention people
   - mark: Mark allows you to mark words easily.
-  - smartsymobls: SmartSymbols inserts commonly used Unicode characters via simple ASCII representations: =/= → ≠.
+  - smartsymbols: SmartSymbols inserts commonly used Unicode characters via simple ASCII representations: =/= → ≠.
   - highlight: Highlight allows you to configure the syntax highlighting of SuperFences and InlineHilite. Also passes standard Markdown indented code blocks through the syntax highlighter.
   - extra: Extra is just like Python Markdown's Extra package except it uses PyMdown Extensions to substitute similar extensions.
   - tabbed: Tabbed allows for tabbed Markdown content.

@@ -90,6 +90,10 @@ Extensions:
 
 ## Changelog
 
+### 0.0.14
+
+- Upgrade plantuml-markdown to 3.4.2 with support for external file sources. [#18](https://github.com/backstage/mkdocs-techdocs-core/pull/18)
+
 ### 0.0.13
 
 - Fixed issue where the whole temp directory could be included in the built site output. [#7](https://github.com/backstage/mkdocs-techdocs-core/issues/7)

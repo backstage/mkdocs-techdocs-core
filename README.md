@@ -90,6 +90,10 @@ Extensions:
 
 ## Changelog
 
+### 0.0.15
+
+- Upgrade monorepo to track latest patch, includes various bug fixes. [#22](https://github.com/backstage/mkdocs-techdocs-core/pull/22)
+
 ### 0.0.14
 
 - Upgrade plantuml-markdown to 3.4.2 with support for external file sources. [#18](https://github.com/backstage/mkdocs-techdocs-core/pull/18)

@@ -40,7 +40,7 @@ setup(
         "mkdocs-monorepo-plugin~=0.4.13",
         "plantuml-markdown==3.4.2",
         "markdown_inline_graphviz_extension==1.1",
-        "pygments==2.6.1",
+        "pygments==2.7.4",
         "pymdown-extensions==7.1",
         "Markdown==3.2.2",
     ],

@@ -90,6 +90,10 @@ Extensions:
 
 ## Changelog
 
+### 0.0.16
+
+- Upgrade `mkdocs-material` to latest version (`7.1.0`).
+
 ### 0.0.15
 
 - Upgrade monorepo to track latest patch, includes various bug fixes. [#22](https://github.com/backstage/mkdocs-techdocs-core/pull/22)

@@ -22,12 +22,12 @@ with open(path.join(this_dir, "README.md"), encoding="utf-8") as file:
     long_description = file.read()
     
 # Read the contents of the requirements.txt file
-with open('requirements.txt') as f:
+with open("requirements.txt") as f:
     required = f.read().splitlines()
     
 setup(
     name="mkdocs-techdocs-core",
-    version="0.0.15",
+    version="0.0.16",
     description="The core MkDocs plugin used by Backstage's TechDocs as a wrapper around "
     "multiple MkDocs plugins and Python Markdown extensions",
     long_description=long_description,

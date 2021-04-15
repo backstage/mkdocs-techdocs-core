@@ -90,6 +90,10 @@ Extensions:
 
 ## Changelog
 
+### 0.0.16
+
+- Reused data from `requirements.txt` file in `install_requires` of `setup.py`. [#24](https://github.com/backstage/mkdocs-techdocs-core/pull/24)
+
 ### 0.0.15
 
 - Upgrade monorepo to track latest patch, includes various bug fixes. [#22](https://github.com/backstage/mkdocs-techdocs-core/pull/22)

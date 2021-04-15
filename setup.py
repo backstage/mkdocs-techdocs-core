@@ -20,11 +20,11 @@ from os import path
 this_dir = path.abspath(path.dirname(__file__))
 with open(path.join(this_dir, "README.md"), encoding="utf-8") as file:
     long_description = file.read()
-    
+
 # Read the contents of the requirements.txt file
 with open("requirements.txt") as f:
     required = f.read().splitlines()
-    
+
 setup(
     name="mkdocs-techdocs-core",
     version="0.0.16",

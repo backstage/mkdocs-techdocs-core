@@ -48,9 +48,10 @@ black .
 
 **Note:** This will write to all Python files in `src/` with the formatted code. If you would like to only check to see if it passes, simply append the `--check` flag.
 
-### Release flow
+### Release
 
-Update the version in `setup.py` to trigger a new release workflow on [GitHub Actions](.github/workflows/pypi-publish.yml). Make sure to update the Changelog in the README as well.
+1. Update the [Changelog](https://github.com/backstage/mkdocs-techdocs-core/blob/main/README.md#changelog).
+2. Bump up the version number in `setup.py` which triggers the release workflow on [GitHub Actions](.github/workflows/pypi-publish.yml) to publish a new version in PyPI.
 
 ## MkDocs plugins and extensions
 

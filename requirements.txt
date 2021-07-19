@@ -1,6 +1,6 @@
 # The "base" version of the Mkdocs project.
 # https://github.com/mkdocs/mkdocs
-mkdocs>=1.2.1
+mkdocs>=1.2.2
 mkdocs-material==5.3.2
 mkdocs-monorepo-plugin~=0.4.13
 plantuml-markdown==3.4.2

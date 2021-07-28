@@ -48,6 +48,37 @@ black .
 
 **Note:** This will write to all Python files in `src/` with the formatted code. If you would like to only check to see if it passes, simply append the `--check` flag.
 
+### Testing Depedencies End-to-End
+
+Much of the value of this plugin lies in its dependencies, on which there are
+implicit dependencies upstream in the Backstage TechDocs frontend plugin. Each
+time you update a pinned dependency, it's important to test that generated
+documentation can be loaded and parsed as expected in the Backstage frontend.
+The recommended way to do so is the following:
+
+1. Make the expected dependency change locally in `requirements.txt`.
+2. Clone the [techdocs-container](https://github.com/backstage/techdocs-container)
+   image and, within the cloned directory, copy the entire contents of your
+   local version of `mkdocs-techdocs-core`, e.g. named `local-mkdocs-techdocs-core`.
+3. Just before the `RUN pip install` command in `techdocs-container`'s
+   Dockerfile, add a `COPY` command that copies the contents of your modified
+   `mkdocs-techdocs-core` directory into the container's file system. Something
+   like: `COPY ./local-mkdocs-techdocs-core/ /local-mkdocs-techdocs-core/`
+4. Modify the `RUN pip install`... command to install an editable version of
+   the copied local plugin, rather than the specific version. Something like...
+   `RUN pip install --upgrade pip && pip install -e /local-mkdocs-techdocs-core`
+5. Build the modified image: `docker build -t mkdocs:local-dev .`
+6. Modify your local Backstage instance to use your locally built
+   `techdocs-container` instead of using the published image by setting the
+   following configuration:
+
+```yaml
+techdocs:
+  generator:
+    runIn: 'docker'
+    dockerImage: 'mkdocs:local-dev'
+```
+
 ### Release
 
 1. Update the [Changelog](https://github.com/backstage/mkdocs-techdocs-core/blob/main/README.md#changelog).
@@ -91,6 +122,11 @@ Extensions:
   - Note that the format `svg_object` is not supported for rendering diagrams. Read more in the [TechDocs troubleshooting](https://backstage.io/docs/features/techdocs/troubleshooting#plantuml-with-svg_object-doesnt-render) section.
 
 ## Changelog
+
+### 0.1.0
+
+- Improved dependency compatibility with other mkdocs plugins.
+- Upgraded mkdocs minimum to `1.2.2`
 
 ### 0.0.16
 

@@ -123,6 +123,10 @@ Extensions:
 
 ## Changelog
 
+### 0.1.1
+
+- Ensure required mkdocs-monorepo-plugin is compatible with Mkdocs `1.2.x`.
+
 ### 0.1.0
 
 - Improved dependency compatibility with other mkdocs plugins.

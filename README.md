@@ -123,6 +123,10 @@ Extensions:
 
 ## Changelog
 
+### 0.1.2
+
+- Fix the dependency version of Markdown to ensure GraphViz SVG rendering works.
+
 ### 0.1.1
 
 - Ensure required mkdocs-monorepo-plugin is compatible with Mkdocs `1.2.x`.

@@ -105,6 +105,7 @@ class TechDocsCore(BasePlugin):
 
         config["markdown_extensions"].append("markdown_inline_graphviz")
         config["markdown_extensions"].append("plantuml_markdown")
+        config["markdown_extensions"].append("mdx_truly_sane_lists")
 
         # merge config supplied by user in the mkdocs.yml
         for key in mdx_configs_override:

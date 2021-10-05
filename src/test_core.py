@@ -29,6 +29,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertTrue("toc" in final_config["mdx_configs"])
         self.assertTrue("permalink" in final_config["mdx_configs"]["toc"])
         self.assertTrue("toc_depth" in final_config["mdx_configs"]["toc"])
+        self.assertTrue("mdx_truly_sane_lists" in final_config["markdown_extensions"])
 
     def test_override_default_config_with_user_config(self):
         self.mkdocs_yaml_config["markdown_extension"] = []
@@ -39,3 +40,4 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertTrue("toc" in final_config["mdx_configs"])
         self.assertTrue("permalink" in final_config["mdx_configs"]["toc"])
         self.assertFalse(final_config["mdx_configs"]["toc"]["permalink"])
+        self.assertTrue("mdx_truly_sane_lists" in final_config["markdown_extensions"])

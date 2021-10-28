@@ -125,6 +125,13 @@ Extensions:
 
 ## Changelog
 
+### 0.2.1
+
+- Fix run-time `module 'pyparsing' has no attribute 'downcaseTokens'` error as
+  a result of shifting python dependencies.
+- Update to latest `mkdocs-monorepo-plugin`, which allows use of `.yaml` file
+  extensions and non-slug-like `site_name`s in monorepos.
+
 ### 0.2.0
 
 - Add mdx_truly_sane_lists for dealing with the very annoying bullet differences in mkdocs vs commonmark / gf markdown. See https://github.com/backstage/backstage/issues/6057#issuecomment-862822002

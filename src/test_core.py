@@ -1,5 +1,4 @@
 import unittest
-import mkdocs.config as config
 import mkdocs.plugins as plugins
 from .core import TechDocsCore
 

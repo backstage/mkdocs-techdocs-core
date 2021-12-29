@@ -127,7 +127,7 @@ Extensions:
 
 ### 0.2.2
 
-- Update plantuml-md version to 3.5.0 for image maps support
+- Update `plantuml-markdown` version to 3.5.0 for image maps support
 
 ### 0.2.1
 

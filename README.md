@@ -125,6 +125,10 @@ Extensions:
 
 ## Changelog
 
+### 0.2.2
+
+- Update plantuml-md version to 3.5.0 for image maps support
+
 ### 0.2.1
 
 - Fix run-time `module 'pyparsing' has no attribute 'downcaseTokens'` error as

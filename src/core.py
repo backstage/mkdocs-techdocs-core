@@ -85,9 +85,6 @@ class TechDocsCore(BasePlugin):
         config["markdown_extensions"].append("pymdownx.mark")
         config["markdown_extensions"].append("pymdownx.smartsymbols")
         config["markdown_extensions"].append("pymdownx.superfences")
-        config["mdx_configs"]["pymdownx.superfences"] = {
-            "legacy_tab_classes": True,
-        }
         config["markdown_extensions"].append("pymdownx.highlight")
         config["mdx_configs"]["pymdownx.highlight"] = {
             "linenums": True,
@@ -97,6 +94,9 @@ class TechDocsCore(BasePlugin):
             "smart_enable": "all",
         }
         config["markdown_extensions"].append("pymdownx.tabbed")
+        config["mdx_configs"]["pymdownx.tabbed"] = {
+            "alternate_style": True,
+        }
         config["markdown_extensions"].append("pymdownx.tasklist")
         config["mdx_configs"]["pymdownx.tasklist"] = {
             "custom_checkbox": True,

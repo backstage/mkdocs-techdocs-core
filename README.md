@@ -126,6 +126,12 @@ Extensions:
 
 ## Changelog
 
+### 1.0.0
+
+- This package has been promoted to v1.0!
+
+> **Note:** Going forward, this package will follow [semver](https://semver.org/#semantic-versioning-200) conventions.
+
 ### 0.2.3
 
 - Upgrade mkdocs-material and its dependencies

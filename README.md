@@ -126,6 +126,10 @@ Extensions:
 
 ## Changelog
 
+### 1.0.1
+
+Upgrade mkdocs-material to [v8.2.7](https://github.com/squidfunk/mkdocs-material/releases/tag/8.2.7)
+
 ### 1.0.0
 
 - This package has been promoted to v1.0!

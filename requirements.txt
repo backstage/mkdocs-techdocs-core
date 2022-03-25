@@ -10,3 +10,4 @@ mdx_truly_sane_lists==1.2
 pygments==2.10
 pymdown-extensions==9.0
 Markdown==3.2.2
+Jinja2==3.0.3

@@ -1,6 +1,8 @@
 import unittest
 import mkdocs.plugins as plugins
 from .core import TechDocsCore
+from jinja2 import Environment, PackageLoader, select_autoescape
+import json
 
 
 class DummyTechDocsCorePlugin(plugins.BasePlugin):
@@ -40,3 +42,18 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertTrue("permalink" in final_config["mdx_configs"]["toc"])
         self.assertFalse(final_config["mdx_configs"]["toc"]["permalink"])
         self.assertTrue("mdx_truly_sane_lists" in final_config["markdown_extensions"])
+
+    def test_template_renders__multiline_value_as_valid_json(self):
+        self.techdocscore.on_config(self.mkdocs_yaml_config)
+        env = Environment(
+            loader=PackageLoader("test", self.techdocscore.tmp_dir_techdocs_theme.name),
+            autoescape=select_autoescape(),
+        )
+        template = env.get_template("techdocs_metadata.json")
+        config = {
+            "site_name": "my site",
+            "site_description": "my very\nlong\nsite\ndescription",
+        }
+        rendered = template.render(config=config)
+        as_json = json.loads(rendered)
+        self.assertEquals(config, as_json)

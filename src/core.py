@@ -35,7 +35,8 @@ class TechDocsCore(BasePlugin):
             "w+",
         ) as fp:
             fp.write(
-                '{\n  "site_name": "{{ config.site_name }}",\n  "site_description": "{{ config.site_description }}"\n}'
+                '{{ {"site_name": (config.site_name | string), '
+                '"site_description": (config.site_description | string)} | tojson }}'
             )
 
         mdx_configs_override = {}

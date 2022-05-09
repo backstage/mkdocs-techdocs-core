@@ -44,6 +44,10 @@ class TechDocsCore(BasePlugin):
             mdx_configs_override = config["mdx_configs"].copy()
 
         # Theme
+        theme_override = {}
+        if "theme" in config:
+            theme_override = config["theme"].copy()
+
         config["theme"] = Theme(
             name="material",
             static_templates=[
@@ -51,6 +55,10 @@ class TechDocsCore(BasePlugin):
             ],
         )
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
+
+        for key in theme_override:
+            if key not in config["theme"]:
+                config[key] = theme_override[key]
 
         # Plugins
         del config["plugins"]["techdocs-core"]

@@ -89,6 +89,7 @@ class TechDocsCore(BasePlugin):
         config["markdown_extensions"].append("pymdownx.highlight")
         config["mdx_configs"]["pymdownx.highlight"] = {
             "linenums": True,
+            "pygments_lang_class": True,
         }
         config["markdown_extensions"].append("pymdownx.extra")
         config["mdx_configs"]["pymdownx.betterem"] = {

@@ -58,7 +58,7 @@ class TechDocsCore(BasePlugin):
 
         for key in theme_override:
             if key not in config["theme"]:
-                config[key] = theme_override[key]
+                config["theme"][key] = theme_override[key]
 
         # Plugins
         del config["plugins"]["techdocs-core"]

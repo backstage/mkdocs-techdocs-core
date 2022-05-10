@@ -126,9 +126,13 @@ Extensions:
 
 ## Changelog
 
+### 1.0.2
+
+- Bumped `pymdown-extensions` to 9.3 and enabled `pygments_lang_class` to allow easier targeting of codeblocks by language in TechDocs Addons.
+
 ### 1.0.1
 
-`Jinja2` pinned to v3.0.3. 
+- `Jinja2` pinned to v3.0.3.
 
 ### 1.0.0
 

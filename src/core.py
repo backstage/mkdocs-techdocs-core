@@ -68,7 +68,6 @@ class TechDocsCore(BasePlugin):
         config["plugins"]["monorepo"] = monorepo_plugin
         config["plugins"]["mkdocs-jupyter"] = jupyter_plugin
 
-
         # Markdown Extensions
         if "markdown_extensions" not in config:
             config["markdown_extensions"] = []

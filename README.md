@@ -130,7 +130,7 @@ Extensions:
 
 ### 1.0.3
 
-- Added `mkdocs-jupyter` plugin.
+- Added `mkdocs-jupyter` plugin and updated `pygments` to `>=2.10` for compatibility reasons
 
 ### 1.0.2
 

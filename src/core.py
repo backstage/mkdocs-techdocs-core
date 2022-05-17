@@ -20,6 +20,7 @@ from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
 from mkdocs.contrib.search import SearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
+from mkdocs_jupyter.plugin import Plugin as JupyterPlugin
 from pymdownx.emoji import to_svg
 
 
@@ -60,8 +61,13 @@ class TechDocsCore(BasePlugin):
 
         monorepo_plugin = MonorepoPlugin()
         monorepo_plugin.load_config({})
+
+        jupyter_plugin = JupyterPlugin()
+
         config["plugins"]["search"] = search_plugin
         config["plugins"]["monorepo"] = monorepo_plugin
+        config["plugins"]["mkdocs-jupyter"] = jupyter_plugin
+
 
         # Markdown Extensions
         if "markdown_extensions" not in config:

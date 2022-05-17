@@ -93,6 +93,8 @@ Plugins:
 
 - [search](https://www.mkdocs.org/user-guide/configuration/#search): A search plugin is provided by default with MkDocs which uses [lunr.js](https://lunrjs.com/) as a search engine.
 - [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin): This plugin enables you to build multiple sets of documentation in a single MkDocs project. It is designed to address writing documentation in Spotify's largest and most business-critical codebases (typically monoliths or monorepos).
+- [mkdocs-jupyter](https://github.com/danielfrg/mkdocs-jupyter): This plugin enables you to add Jupyter Notebooks directly to the mkdocs navigation. It supports multiple formats such as `.ipynb` and `.py` files (using jupytext) and provides many more advanced features.
+
 
 Extensions:
 
@@ -125,6 +127,10 @@ Extensions:
 - [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/): An extension for Python-Markdown that makes lists truly sane. Features custom indents for nested lists and fix for messy linebreaks and paragraphs between lists.
 
 ## Changelog
+
+### 1.0.3
+
+- Added `mkdocs-jupyter` plugin.
 
 ### 1.0.2
 

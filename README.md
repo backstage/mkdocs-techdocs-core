@@ -124,7 +124,19 @@ Extensions:
 
 - [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/): An extension for Python-Markdown that makes lists truly sane. Features custom indents for nested lists and fix for messy linebreaks and paragraphs between lists.
 
+## Caveats
+
+### Theme
+
+We only use `material-mkdocs` as base styles because Backstage also uses the `Material UI` on the client-side. We don't expect people to use themes other than `Material UI` to maintain consistency across all Backstage pages (in other words, documentation pages have the same look and feel as any other Backstage page) and so we use the `BackstageTheme` configured in Front-end application as the source of truth for all application design tokens like colors, typography and etc. So here you can [see](https://github.com/backstage/backstage/blob/master/plugins/techdocs/src/reader/components/TechDocsReaderPageContent/dom.tsx#L160-L692) that some styles will always be overridden regardless of the `mkdocs-material` plugin theme settings and this can cause unexpected behavior for those who override the theme setting in a `mkdocs.yaml` file.
+
 ## Changelog
+
+### 1.1.0
+
+- Add new capability to override mkdocs theme attributes
+
+> **Note:** Look the caveats section in readme about the Backstage theme consideration
 
 ### 1.0.2
 
@@ -132,7 +144,7 @@ Extensions:
 
 ### 1.0.1
 
-- `Jinja2` pinned to v3.0.3.
+`Jinja2` pinned to v3.0.3.
 
 ### 1.0.0
 

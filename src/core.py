@@ -15,12 +15,17 @@
 """
 
 import tempfile
+import logging
 import os
 from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
+from mkdocs.utils import warning_filter
 from mkdocs.contrib.search import SearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
+
+log = logging.getLogger(__name__)
+log.addFilter(warning_filter)
 
 
 class TechDocsCore(BasePlugin):
@@ -47,6 +52,9 @@ class TechDocsCore(BasePlugin):
         theme_override = {}
         if "theme" in config:
             theme_override = config["theme"]
+            if config["theme"].name != "material":
+                log.critical("[mkdocs-techdocs-core] The theme must be 'material'")
+                raise SystemExit(1)
 
         config["theme"] = Theme(
             name="material",

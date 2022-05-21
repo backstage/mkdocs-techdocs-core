@@ -59,7 +59,7 @@ class TechDocsCore(BasePlugin):
         for key in theme_override:
             if key not in config["theme"]:
                 config["theme"][key] = theme_override[key]
-            elif key in ["static_templates", "dir"]:
+            elif key in ["static_templates", "dir", "features"]:
                 default_config = config["theme"][key]
                 override_config = theme_override[key]
                 config["theme"][key] = [*default_config, *override_config]

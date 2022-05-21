@@ -34,11 +34,13 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.mkdocs_yaml_config["mdx_configs"] = {}
         self.mkdocs_yaml_config["markdown_extension"].append(["toc"])
         self.mkdocs_yaml_config["mdx_configs"]["toc"] = {"toc_depth": 3}
+        self.mkdocs_yaml_config["theme"]["features"] = ["navigation.sections"]
         final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
         self.assertTrue("toc" in final_config["mdx_configs"])
         self.assertTrue("permalink" in final_config["mdx_configs"]["toc"])
         self.assertTrue("toc_depth" in final_config["mdx_configs"]["toc"])
         self.assertTrue("mdx_truly_sane_lists" in final_config["markdown_extensions"])
+        self.assertTrue("navigation.sections" in final_config["theme"]["features"])
 
     def test_override_default_config_with_user_config(self):
         self.mkdocs_yaml_config["markdown_extension"] = []

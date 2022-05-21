@@ -44,25 +44,9 @@ class TechDocsCore(BasePlugin):
             mdx_configs_override = config["mdx_configs"].copy()
 
         # Theme
-        theme_override = {}
-        if "theme" in config:
-            theme_override = config["theme"]
-
-        config["theme"] = Theme(
-            name="material",
-            static_templates=[
-                "techdocs_metadata.json",
-            ],
-        )
+        config["theme"].name = "material"
+        config["theme"].static_templates.update({"techdocs_metadata.json"})
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
-
-        for key in theme_override:
-            if key not in config["theme"]:
-                config["theme"][key] = theme_override[key]
-            elif key in ["static_templates", "dir"]:
-                default_config = config["theme"][key]
-                override_config = theme_override[key]
-                config["theme"][key] = [*default_config, *override_config]
 
         # Plugins
         del config["plugins"]["techdocs-core"]

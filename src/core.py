@@ -52,7 +52,7 @@ class TechDocsCore(BasePlugin):
         theme_override = {}
         if "theme" in config:
             theme_override = config["theme"]
-            if config["theme"].name != "material":
+            if config["theme"]["name"] != "material":
                 log.critical("[mkdocs-techdocs-core] The theme must be 'material'")
                 raise SystemExit(1)
 

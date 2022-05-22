@@ -1,8 +1,14 @@
 import unittest
 import mkdocs.plugins as plugins
+from mkdocs.theme import Theme
 from .core import TechDocsCore
 from jinja2 import Environment, PackageLoader, select_autoescape
 import json
+
+# Helper to get the "default" theme passed into config when no theme is
+# provided in the actual config.
+def get_default_theme():
+    return Theme(name="mkdocs")
 
 
 class DummyTechDocsCorePlugin(plugins.BasePlugin):
@@ -16,6 +22,8 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         plugin = DummyTechDocsCorePlugin()
         self.plugin_collection["techdocs-core"] = plugin
         self.mkdocs_yaml_config = {"plugins": self.plugin_collection}
+        # Note: in reality, config["theme"] is always an instance of Theme
+        self.mkdocs_yaml_config["theme"] = get_default_theme()
 
     def test_removes_techdocs_core_plugin_from_config(self):
         final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)

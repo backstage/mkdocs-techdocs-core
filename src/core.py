@@ -15,12 +15,17 @@
 """
 
 import tempfile
+import logging
 import os
 from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
+from mkdocs.utils import warning_filter
 from mkdocs.contrib.search import SearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
+
+log = logging.getLogger(__name__)
+log.addFilter(warning_filter)
 
 
 class TechDocsCore(BasePlugin):
@@ -44,7 +49,12 @@ class TechDocsCore(BasePlugin):
             mdx_configs_override = config["mdx_configs"].copy()
 
         # Theme
-        config["theme"].name = "material"
+        if config["theme"].name != "material":
+            log.info("[mkdocs-techdocs-core] The theme has been replaced by 'material'")
+            log.info(
+                "[mkdocs-techdocs-core] Set theme.name to 'material' to override theme options"
+            )
+            config["theme"] = Theme(name="material")
         config["theme"].static_templates.update({"techdocs_metadata.json"})
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
 

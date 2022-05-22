@@ -46,7 +46,7 @@ class TechDocsCore(BasePlugin):
         # Theme
         theme_override = {}
         if "theme" in config:
-            theme_override = config["theme"].copy()
+            theme_override = config["theme"]
 
         config["theme"] = Theme(
             name="material",

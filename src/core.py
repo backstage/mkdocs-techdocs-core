@@ -27,7 +27,7 @@ from pymdownx.emoji import to_svg
 log = logging.getLogger(__name__)
 log.addFilter(warning_filter)
 
-
+TECHDOCS_DEFAULT_THEME = "material"
 class TechDocsCore(BasePlugin):
     def __init__(self):
         # This directory will be removed automatically once the docs are built
@@ -49,12 +49,14 @@ class TechDocsCore(BasePlugin):
             mdx_configs_override = config["mdx_configs"].copy()
 
         # Theme
-        if config["theme"].name != "material":
-            log.info("[mkdocs-techdocs-core] The theme has been replaced by 'material'")
+        if config["theme"].name != TECHDOCS_DEFAULT_THEME:
+            config["theme"] = Theme(name=TECHDOCS_DEFAULT_THEME)
+        elif config["theme"].name == TECHDOCS_DEFAULT_THEME:
             log.info(
-                "[mkdocs-techdocs-core] Set theme.name to 'material' to override theme options"
+                "[mkdocs-techdocs-core] Overridden '%s' theme settings in use",
+                TECHDOCS_DEFAULT_THEME
             )
-            config["theme"] = Theme(name="material")
+
         config["theme"].static_templates.update({"techdocs_metadata.json"})
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
 

@@ -28,6 +28,8 @@ log = logging.getLogger(__name__)
 log.addFilter(warning_filter)
 
 TECHDOCS_DEFAULT_THEME = "material"
+
+
 class TechDocsCore(BasePlugin):
     def __init__(self):
         # This directory will be removed automatically once the docs are built
@@ -54,7 +56,7 @@ class TechDocsCore(BasePlugin):
         elif config["theme"].name == TECHDOCS_DEFAULT_THEME:
             log.info(
                 "[mkdocs-techdocs-core] Overridden '%s' theme settings in use",
-                TECHDOCS_DEFAULT_THEME
+                TECHDOCS_DEFAULT_THEME,
             )
 
         config["theme"].static_templates.update({"techdocs_metadata.json"})

@@ -132,6 +132,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### 1.1.2
+
+- Simplify theme code to update only the attribute necessary by backstage.
+
 ### 1.1.1
 
 - Fix run-time `AttributeError: 'Theme' object has no attribute 'copy'`

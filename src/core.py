@@ -15,12 +15,19 @@
 """
 
 import tempfile
+import logging
 import os
 from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
+from mkdocs.utils import warning_filter
 from mkdocs.contrib.search import SearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
+
+log = logging.getLogger(__name__)
+log.addFilter(warning_filter)
+
+TECHDOCS_DEFAULT_THEME = "material"
 
 
 class TechDocsCore(BasePlugin):
@@ -44,25 +51,16 @@ class TechDocsCore(BasePlugin):
             mdx_configs_override = config["mdx_configs"].copy()
 
         # Theme
-        theme_override = {}
-        if "theme" in config:
-            theme_override = config["theme"]
+        if config["theme"].name != TECHDOCS_DEFAULT_THEME:
+            config["theme"] = Theme(name=TECHDOCS_DEFAULT_THEME)
+        elif config["theme"].name == TECHDOCS_DEFAULT_THEME:
+            log.info(
+                "[mkdocs-techdocs-core] Overridden '%s' theme settings in use",
+                TECHDOCS_DEFAULT_THEME,
+            )
 
-        config["theme"] = Theme(
-            name="material",
-            static_templates=[
-                "techdocs_metadata.json",
-            ],
-        )
+        config["theme"].static_templates.update({"techdocs_metadata.json"})
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
-
-        for key in theme_override:
-            if key not in config["theme"]:
-                config["theme"][key] = theme_override[key]
-            elif key in ["static_templates", "dir"]:
-                default_config = config["theme"][key]
-                override_config = theme_override[key]
-                config["theme"][key] = [*default_config, *override_config]
 
         # Plugins
         del config["plugins"]["techdocs-core"]

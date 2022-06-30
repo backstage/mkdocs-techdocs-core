@@ -132,6 +132,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### 1.1.3
+
+- Upgraded `plantuml-markdown` to `3.5.1`, which removes `uuid` as a dependency.
+
 ### 1.1.2
 
 - Simplify theme code to update only the attribute necessary by backstage.

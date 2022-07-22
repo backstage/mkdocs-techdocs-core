@@ -132,6 +132,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### Unrelesed
+
+- Add support to Python 3.10 [#73](https://github.com/backstage/mkdocs-techdocs-core/pull/73)
+
 ### 1.1.2
 
 - Simplify theme code to update only the attribute necessary by backstage.

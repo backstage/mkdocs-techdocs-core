@@ -48,7 +48,7 @@ black .
 
 **Note:** This will write to all Python files in `src/` with the formatted code. If you would like to only check to see if it passes, simply append the `--check` flag.
 
-### Testing Depedencies End-to-End
+### Testing Dependencies End-to-End
 
 Much of the value of this plugin lies in its dependencies, on which there are
 implicit dependencies upstream in the Backstage TechDocs frontend plugin. Each

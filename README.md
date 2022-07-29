@@ -132,9 +132,13 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
-### Unrelesed
+### Unreleased
 
 - Add support to Python 3.10 [#73](https://github.com/backstage/mkdocs-techdocs-core/pull/73)
+
+### 1.1.3
+
+- Upgraded `plantuml-markdown` to `3.5.1`, which removes `uuid` as a dependency.
 
 ### 1.1.2
 

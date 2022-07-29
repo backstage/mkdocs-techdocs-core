@@ -48,7 +48,7 @@ black .
 
 **Note:** This will write to all Python files in `src/` with the formatted code. If you would like to only check to see if it passes, simply append the `--check` flag.
 
-### Testing Depedencies End-to-End
+### Testing Dependencies End-to-End
 
 Much of the value of this plugin lies in its dependencies, on which there are
 implicit dependencies upstream in the Backstage TechDocs frontend plugin. Each
@@ -131,6 +131,10 @@ Extensions:
 We only use `material-mkdocs` as base styles because Backstage also uses the `Material UI` on the client-side. We don't expect people to use themes other than `Material UI` to maintain consistency across all Backstage pages (in other words, documentation pages have the same look and feel as any other Backstage page) and so we use the `BackstageTheme` configured in Front-end application as the source of truth for all application design tokens like colors, typography and etc. So here you can [see](https://github.com/backstage/backstage/blob/master/plugins/techdocs/src/reader/components/TechDocsReaderPageContent/dom.tsx#L160-L692) that some styles will always be overridden regardless of the `mkdocs-material` plugin theme settings and this can cause unexpected behavior for those who override the theme setting in a `mkdocs.yaml` file.
 
 ## Changelog
+
+### Unreleased
+
+- Add support to Python 3.10 [#73](https://github.com/backstage/mkdocs-techdocs-core/pull/73)
 
 ### 1.1.3
 

@@ -19,7 +19,7 @@ jobs:
     name: Triage
     steps:
       - name: Assign new issue or PR to Incoming
-        uses: srggrs/assign-one-project-github-action@1.2.0
+        uses: srggrs/assign-one-project-github-action@1.3.1
         with:
           project: "https://github.com/orgs/backstage/projects/1"
           column_name: "Incoming"

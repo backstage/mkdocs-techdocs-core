@@ -89,12 +89,12 @@ techdocs:
 The TechDocs Core MkDocs plugin comes with a set of extensions and plugins that mkdocs supports. Below you can find a list of all extensions and plugins that are included in the
 TechDocs Core plugin:
 
-Plugins:
+**Plugins**:
 
 - [search](https://www.mkdocs.org/user-guide/configuration/#search): A search plugin is provided by default with MkDocs which uses [lunr.js](https://lunrjs.com/) as a search engine.
 - [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin): This plugin enables you to build multiple sets of documentation in a single MkDocs project. It is designed to address writing documentation in Spotify's largest and most business-critical codebases (typically monoliths or monorepos).
 
-Extensions:
+**Extensions**:
 
 - [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions): Admonitions, also known as call-outs, are an excellent choice for including side content without significantly interrupting the document flow. Material for MkDocs provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.
 - [toc](https://python-markdown.github.io/extensions/toc/): The Table of Contents extension generates a Table of Contents from a Markdown document and adds it into the resulting HTML document.
@@ -123,6 +123,18 @@ Extensions:
   - Note that the format `svg_object` is not supported for rendering diagrams. Read more in the [TechDocs troubleshooting](https://backstage.io/docs/features/techdocs/troubleshooting#plantuml-with-svg_object-doesnt-render) section.
 
 - [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/): An extension for Python-Markdown that makes lists truly sane. Features custom indents for nested lists and fix for messy linebreaks and paragraphs between lists.
+
+### Other plugins and extensions
+
+Note that the above set of plugins and extensions represents an opinionated
+list providing a core set of functionality necessary for most technical
+documentation needs (hence: `techdocs-core`). PRs introducing new plugins or
+extensions are welcome, but they are not guaranteed to be accepted.
+
+In order to solve your organization's specific needs, you're encouraged to
+install any necessary extensions/plugins in your own environment on top of
+`techdocs-core` (be it the TechDocs backend container, or a custom TechDocs
+build container).
 
 ## Caveats
 

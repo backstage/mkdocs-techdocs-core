@@ -132,6 +132,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### Unreleased
+
+- Removed the pin on the `pyparsing` dependency, which is no longer needed.
+
 ### 1.1.5
 
 - Added support for Python 3.10 [#73](https://github.com/backstage/mkdocs-techdocs-core/pull/73)

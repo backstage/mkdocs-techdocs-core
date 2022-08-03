@@ -132,9 +132,11 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
-### Unreleased
+### 1.1.5
 
-- Add support to Python 3.10 [#73](https://github.com/backstage/mkdocs-techdocs-core/pull/73)
+- Added support for Python 3.10 [#73](https://github.com/backstage/mkdocs-techdocs-core/pull/73)
+- Resolved a run-time error introduced in `1.1.4` that prevented sites from
+  being built under certain circumstances.
 
 ### 1.1.4
 

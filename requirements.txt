@@ -4,7 +4,6 @@ mkdocs>=1.2.2
 mkdocs-material==8.1.11
 mkdocs-monorepo-plugin~=1.0.1
 plantuml-markdown==3.5.1
-pyparsing==3.0.9 # Workaround for run-time error "module 'pyparsing' has no attribute 'downcaseTokens'"
 markdown_inline_graphviz_extension>=1.1.1,<2.0
 mdx_truly_sane_lists==1.2
 pygments==2.10

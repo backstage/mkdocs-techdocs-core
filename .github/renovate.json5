@@ -1,4 +1,10 @@
 {
   labels: ['dependencies'],
   extends: ['config:base', ':disableDependencyDashboard', ':gitSignOff'],
+  packageRules: [
+    {
+      matchLanguages: ['python'],
+      rangeStrategy: 'widen'
+    }
+  ],
 }

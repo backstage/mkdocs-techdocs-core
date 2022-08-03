@@ -1,11 +1,23 @@
-# The "base" version of the Mkdocs project.
-# https://github.com/mkdocs/mkdocs
+# The following are something akin to peer dependencies. They are represented
+# as ranges in order to support interoperability with other mkdocs plugins or
+# packages that might otherwise exist in an adopter's environment.
 mkdocs>=1.2.2
+Markdown>=3.2,<3.4
+
+# The following are more akin to direct dependencies. Each line represents one
+# or more features that are provided by `techdocs-core`, and thus are always
+# pinned to an exact version. Bumps should be accompanied by release notes
+# explaining what was added or fixed (or at least pointing to the underlying
+# release notes of the bumped package).
 mkdocs-material==8.1.11
-mkdocs-monorepo-plugin~=1.0.1
+mkdocs-monorepo-plugin==1.0.2
 plantuml-markdown==3.5.1
-markdown_inline_graphviz_extension>=1.1.1,<2.0
+markdown_inline_graphviz_extension==1.1.1
 mdx_truly_sane_lists==1.2
 pygments==2.10
 pymdown-extensions==9.3
-Markdown>=3.2,<3.4
+
+# The following are temporary dependencies that are only necessary to work
+# around incompatible/conflicting underlying dependencies. Each dependency
+# should include a comment explaining why it is needed, and under what
+# circumstances it can be removed in the future.

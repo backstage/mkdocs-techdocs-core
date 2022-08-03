@@ -1,0 +1,10 @@
+site_name: Fixture Docs
+site_description: Used as a simple end-to-end test of the techdocs-core plugin.
+repo_url: https://github.com/backstage/mkdocs-techdocs-core
+edit_uri: edit/main/test-fixtures/docs
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Home: index.md

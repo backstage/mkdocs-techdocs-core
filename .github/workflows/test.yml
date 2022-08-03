@@ -23,3 +23,12 @@ jobs:
       - name: Test with unittest
         run: |
           python -m unittest src/test_core.py
+      - name: Uninstall dependencies
+        run: |
+          pip list --format=freeze | xargs pip uninstall -y
+      - name: Install techdocs-core plugin.
+        run: |
+          pip install --editable .
+      - name: Run mkdocs build end-to-end
+        run: |
+          mkdocs build --config-file test-fixtures/mkdocs.yml

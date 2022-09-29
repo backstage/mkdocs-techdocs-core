@@ -146,6 +146,11 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.1.7
+
+- Updated `mkdocs-monorepo-plugin` to `1.0.4`, which includes a compatibility
+  fix for `mkdocs` versions `1.4.0` and newer.
+
 ### 1.1.6
 
 - Removed pins on the `pyparsing` and `Jinja2` dependencies, which are no

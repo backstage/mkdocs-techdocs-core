@@ -27,7 +27,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="mkdocs-techdocs-core",
-    version="1.1.6",
+    version="1.1.7",
     description="The core MkDocs plugin used by Backstage's TechDocs as a wrapper around "
     "multiple MkDocs plugins and Python Markdown extensions",
     long_description=long_description,

@@ -22,6 +22,7 @@ from mkdocs.theme import Theme
 from mkdocs.utils import warning_filter
 from mkdocs.contrib.search import SearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
+from techdocs_redirects.plugin import RedirectPlugin
 from pymdownx.emoji import to_svg
 
 log = logging.getLogger(__name__)
@@ -70,8 +71,13 @@ class TechDocsCore(BasePlugin):
 
         monorepo_plugin = MonorepoPlugin()
         monorepo_plugin.load_config({})
+
+        redirects_plugin = RedirectPlugin()
+        redirects_plugin.load_config({})
+
         config["plugins"]["search"] = search_plugin
         config["plugins"]["monorepo"] = monorepo_plugin
+        config["plugins"]["redirects"] = redirects_plugin
 
         # Markdown Extensions
         if "markdown_extensions" not in config:
@@ -79,6 +85,11 @@ class TechDocsCore(BasePlugin):
 
         if "mdx_configs" not in config:
             config["mdx_configs"] = {}
+
+        # in the future, we may decide to interpret redirects from somewhere else than mkdocs.yaml
+        # redirects.redirect_maps.{}
+        if "redirects" not in config:
+            config["redirects"] = {}
 
         config["markdown_extensions"].append("admonition")
         config["markdown_extensions"].append("toc")

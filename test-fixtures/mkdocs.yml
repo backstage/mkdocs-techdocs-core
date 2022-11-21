@@ -5,6 +5,9 @@ edit_uri: edit/main/test-fixtures/docs
 
 plugins:
   - techdocs-core
+  - redirects:
+      redirect_maps:
+        homepage: ''
 
 nav:
   - Home: index.md

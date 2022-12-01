@@ -7,7 +7,9 @@ plugins:
   - techdocs-core
   - redirects:
       redirect_maps:
-        homepage: ''
+        homepage.md: ''
+        a_redirection.md: other.md
+        a/deep/non-existent/link.md: target.md
 
 nav:
   - Home: index.md

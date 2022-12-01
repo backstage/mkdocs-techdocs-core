@@ -22,7 +22,7 @@ from mkdocs.theme import Theme
 from mkdocs.utils import warning_filter
 from mkdocs.contrib.search import SearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
-from techdocs_redirects.plugin import RedirectPlugin
+from mkdocs_redirects.plugin import RedirectPlugin
 from pymdownx.emoji import to_svg
 
 log = logging.getLogger(__name__)

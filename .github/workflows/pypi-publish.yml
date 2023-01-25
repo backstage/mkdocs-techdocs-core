@@ -35,3 +35,15 @@ jobs:
           user: __token__
           password: ${{ secrets.PYPI_API_KEY }}
           packages_dir: ./dist
+      - name: Get version
+        id: get-version
+        run: |
+          VERSION=$(python setup.py --version)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+      - name: Discord notification
+        uses: Ilshidur/action-discord@0.3.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_RELEASE_WEBHOOK }}
+          CURRENT_VERSION: ${{ steps.get-version.version }}
+        with:
+          args: 'Version {{CURRENT_VERSION}} of mkdocs-techdocs-core has been published to PyPi, go check it out: https://pypi.org/project/mkdocs-techdocs-core/'     

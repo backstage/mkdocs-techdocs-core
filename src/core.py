@@ -59,6 +59,11 @@ class TechDocsCore(BasePlugin):
                 TECHDOCS_DEFAULT_THEME,
             )
 
+        if "features" not in config["theme"]:
+            config["theme"]["features"] = []
+
+        config["theme"]["features"].append("navigation.footer")
+
         config["theme"].static_templates.update({"techdocs_metadata.json"})
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
 

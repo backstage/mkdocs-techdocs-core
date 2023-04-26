@@ -123,7 +123,7 @@ class TechDocsCore(BasePlugin):
         }
         config["markdown_extensions"].append("pymdownx.tilde")
 
-        config["markdown_extensions"].append("markdown_inline_graphviz")
+        config["markdown_extensions"].append("mkdocs_graphviz")
         config["markdown_extensions"].append("plantuml_markdown")
         config["markdown_extensions"].append("mdx_truly_sane_lists")
 

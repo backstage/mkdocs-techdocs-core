@@ -146,12 +146,14 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+- Replace `markdown_inline_graphviz_extension` with `mkdocs-graphviz`, another fork. Notably, this fork removes the conflicting legacy `{% %}` syntax.
+
 ### 1.2.0
  - Updated `mkdocs-material` (and its dependencies) from `8.1.11` to `9.1.3` causing a few changes:
    -  Some `mkdocs-material` features were made opt-in v9. In order to preserve compatibility, they are now hardcoded as enabled by `mkdocs-techdocs-core`. The features are
       -  `navigation.footer`
       -  `content.action.edit`
-   -  `theme.palette` is now hardcoded to `""` to preserve previous behavior. Without hardcoding the palette, it gets the value `default`, causing unwanted visual changes. 
+   -  `theme.palette` is now hardcoded to `""` to preserve previous behavior. Without hardcoding the palette, it gets the value `default`, causing unwanted visual changes.
    -  Some components e.g. admonitions have a slightly different look.
    -  Minor color changes that can be avoided by also updating to the latest version of `@backstage/plugin-techdocs` which compensates these changes.
 

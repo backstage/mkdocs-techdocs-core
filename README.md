@@ -146,6 +146,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.2.1
+ - Use latest version of `pymdown-extensions` which contains [security fixes](https://github.com/backstage/mkdocs-techdocs-core/pull/123).
+
 ### 1.2.0
  - Updated `mkdocs-material` (and its dependencies) from `8.1.11` to `9.1.3` causing a few changes:
    -  Some `mkdocs-material` features were made opt-in v9. In order to preserve compatibility, they are now hardcoded as enabled by `mkdocs-techdocs-core`. The features are

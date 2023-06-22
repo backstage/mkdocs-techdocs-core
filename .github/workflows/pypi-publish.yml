@@ -26,9 +26,9 @@ jobs:
       - name: Build Python distribution
         working-directory: .
         run: |
-          pip install wheel
+          pip install build
           rm -rf dist
-          python setup.py bdist_wheel sdist --formats gztar
+          pyproject-build
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:

@@ -146,6 +146,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.2.2
+ - Added config override of `pymdownx.snippets` for [security](https://github.com/facelessuser/pymdown-extensions/security/advisories/GHSA-jh85-wwv9-24hv).
+
 ### 1.2.1
  - Use latest version of `pymdown-extensions` which contains [security fixes](https://github.com/backstage/mkdocs-techdocs-core/pull/123).
 

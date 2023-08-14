@@ -146,6 +146,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.2.2
+ - Updated `pygments` from `2.14` to `2.15.1`
+
 ### 1.2.1
  - Use latest version of `pymdown-extensions` which contains [security fixes](https://github.com/backstage/mkdocs-techdocs-core/pull/123).
 

@@ -146,6 +146,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.2.3
+ - Bumped `pygments` to `2.16.1`, which also fixes a [vulnerability](https://github.com/advisories/GHSA-mrwq-x4v8-fh7p).
+
 ### 1.2.2
  - Added config override of `pymdownx.snippets` for [security](https://github.com/facelessuser/pymdown-extensions/security/advisories/GHSA-jh85-wwv9-24hv). `restrict_base_path` will always be `true`. If you currently use snippets with files outside of the directory, those files will no longer be included. 
 

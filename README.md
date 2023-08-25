@@ -146,6 +146,8 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.2.4
+ - Bumped `renovate-config-validator` to `0.0.12`
 ### 1.2.3
  - Bumped `pygments` to `2.16.1`, which also fixes a [vulnerability](https://github.com/advisories/GHSA-mrwq-x4v8-fh7p).
  - Update dependency `plantuml-markdown` to `3.9.2`.

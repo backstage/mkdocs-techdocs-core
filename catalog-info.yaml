@@ -4,4 +4,4 @@ metadata:
   name: mkdocs-techdocs-core
 spec:
   type: library
-  owner: pulp-fiction
+  owner: protean

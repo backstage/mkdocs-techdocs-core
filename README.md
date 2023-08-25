@@ -146,6 +146,25 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.2.3
+ - Bumped `pygments` to `2.16.1`, which also fixes a [vulnerability](https://github.com/advisories/GHSA-mrwq-x4v8-fh7p).
+ - Update dependency `plantuml-markdown` to `3.9.2`.
+
+### 1.2.2
+ - Added config override of `pymdownx.snippets` for [security](https://github.com/facelessuser/pymdown-extensions/security/advisories/GHSA-jh85-wwv9-24hv). `restrict_base_path` will always be `true`. If you currently use snippets with files outside of the directory, those files will no longer be included. 
+
+### 1.2.1
+ - Use latest version of `pymdown-extensions` which contains [security fixes](https://github.com/backstage/mkdocs-techdocs-core/pull/123).
+
+### 1.2.0
+ - Updated `mkdocs-material` (and its dependencies) from `8.1.11` to `9.1.3` causing a few changes:
+   -  Some `mkdocs-material` features were made opt-in v9. In order to preserve compatibility, they are now hardcoded as enabled by `mkdocs-techdocs-core`. The features are
+      -  `navigation.footer`
+      -  `content.action.edit`
+   -  `theme.palette` is now hardcoded to `""` to preserve previous behavior. Without hardcoding the palette, it gets the value `default`, causing unwanted visual changes. 
+   -  Some components e.g. admonitions have a slightly different look.
+   -  Minor color changes that can be avoided by also updating to the latest version of `@backstage/plugin-techdocs` which compensates these changes.
+
 ### 1.1.7
 
 - Updated `mkdocs-monorepo-plugin` to `1.0.4`, which includes a compatibility

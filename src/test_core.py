@@ -5,6 +5,7 @@ from .core import TechDocsCore, TECHDOCS_DEFAULT_THEME
 from jinja2 import Environment, PackageLoader, select_autoescape
 import json
 
+
 # Helper to get the "default" theme passed into config when no theme is
 # provided in the actual config.
 def get_default_theme():
@@ -52,7 +53,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertTrue("mdx_truly_sane_lists" in final_config["markdown_extensions"])
 
     def test_theme_overrides_removed_when_name_is_not_material(self):
-        ## we want to force the theme mkdocs to this test
+        # we want to force the theme mkdocs to this test
         self.mkdocs_yaml_config["theme"] = Theme(name="mkdocs")
         self.mkdocs_yaml_config["theme"]["features"] = ["navigation.sections"]
         final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
@@ -98,3 +99,15 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         rendered = template.render(config=config)
         as_json = json.loads(rendered)
         self.assertEquals(config, as_json)
+
+    def test_restrict_snippet_base_path(self):
+        self.mkdocs_yaml_config["mdx_configs"] = {
+            "pymdownx.snippets": {"restrict_base_path": False}
+        }
+
+        final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
+
+        self.assertEqual(
+            final_config["mdx_configs"]["pymdownx.snippets"]["restrict_base_path"],
+            True,
+        )

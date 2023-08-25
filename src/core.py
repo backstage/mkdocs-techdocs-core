@@ -50,6 +50,11 @@ class TechDocsCore(BasePlugin):
         if "mdx_configs" in config:
             mdx_configs_override = config["mdx_configs"].copy()
 
+        # Pymdown snippets override to prevent legacy behavior impacting security https://github.com/facelessuser/pymdown-extensions/security/advisories/GHSA-jh85-wwv9-24hv
+        mdx_configs_override["pymdownx.snippets"] = {
+            "restrict_base_path": True,
+        }
+
         # Theme
         if config["theme"].name != TECHDOCS_DEFAULT_THEME:
             config["theme"] = Theme(name=TECHDOCS_DEFAULT_THEME)
@@ -58,6 +63,14 @@ class TechDocsCore(BasePlugin):
                 "[mkdocs-techdocs-core] Overridden '%s' theme settings in use",
                 TECHDOCS_DEFAULT_THEME,
             )
+
+        if "features" not in config["theme"]:
+            config["theme"]["features"] = []
+
+        config["theme"]["features"].append("navigation.footer")
+        config["theme"]["features"].append("content.action.edit")
+
+        config["theme"]["palette"] = ""
 
         config["theme"].static_templates.update({"techdocs_metadata.json"})
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
@@ -95,6 +108,7 @@ class TechDocsCore(BasePlugin):
         config["markdown_extensions"].append("pymdownx.magiclink")
         config["markdown_extensions"].append("pymdownx.mark")
         config["markdown_extensions"].append("pymdownx.smartsymbols")
+        config["markdown_extensions"].append("pymdownx.snippets")
         config["markdown_extensions"].append("pymdownx.superfences")
         config["markdown_extensions"].append("pymdownx.highlight")
         config["mdx_configs"]["pymdownx.highlight"] = {

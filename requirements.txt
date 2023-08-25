@@ -9,13 +9,13 @@ Markdown>=3.2,<3.4
 # pinned to an exact version. Bumps should be accompanied by release notes
 # explaining what was added or fixed (or at least pointing to the underlying
 # release notes of the bumped package).
-mkdocs-material==8.1.11
-mkdocs-monorepo-plugin==1.0.4
-plantuml-markdown==3.5.1
+mkdocs-material==9.1.3
+mkdocs-monorepo-plugin==1.0.5
+plantuml-markdown==3.9.2
 markdown_inline_graphviz_extension==1.1.1
 mdx_truly_sane_lists==1.3
-pygments==2.10
-pymdown-extensions==9.3
+pygments==2.16.1
+pymdown-extensions==10.0.1
 
 # The following are temporary dependencies that are only necessary to work
 # around incompatible/conflicting underlying dependencies. Each dependency

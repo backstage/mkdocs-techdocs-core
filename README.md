@@ -50,33 +50,30 @@ black .
 
 ### Testing Dependencies End-to-End
 
-Much of the value of this plugin lies in its dependencies, on which there are
-implicit dependencies upstream in the Backstage TechDocs frontend plugin. Each
-time you update a pinned dependency, it's important to test that generated
-documentation can be loaded and parsed as expected in the Backstage frontend.
-The recommended way to do so is the following:
+If you have made changes to the plugin itself, or updated a dependency it's
+strongly recommended to test the plugin.
 
-1. Make the expected dependency change locally in `requirements.txt`.
-2. Clone the [techdocs-container](https://github.com/backstage/techdocs-container)
-   image and, within the cloned directory, copy the entire contents of your
-   local version of `mkdocs-techdocs-core`, e.g. named `local-mkdocs-techdocs-core`.
-3. Just before the `RUN pip install` command in `techdocs-container`'s
-   Dockerfile, add a `COPY` command that copies the contents of your modified
-   `mkdocs-techdocs-core` directory into the container's file system. Something
-   like: `COPY ./local-mkdocs-techdocs-core/ /local-mkdocs-techdocs-core/`
-4. Modify the `RUN pip install`... command to install an editable version of
-   the copied local plugin, rather than the specific version. Something like...
-   `RUN pip install --upgrade pip && pip install -e /local-mkdocs-techdocs-core`
-5. Build the modified image: `docker build -t mkdocs:local-dev .`
-6. Modify your local Backstage instance to use your locally built
-   `techdocs-container` instead of using the published image by setting the
-   following configuration:
+To build a version of the `spotify/techdocs` docker image with your changes,
+run the below script in this repository:
+```bash
+./build-e2e-image.sh
+```
+_The script is only tested on OSX_
+
+The script assumes that you have the 
+[image repository](https://github.com/backstage/techdocs-container) cloned in a
+sibling directory to this repository (or you can specify its location).
+
+It will build an image called `mkdocs:local-dev` including the changes you 
+have made locally. To test the image in backstage, edit the config (e.g. 
+`app-config.yaml`) with the following:
 
 ```yaml
 techdocs:
   generator:
     runIn: "docker"
     dockerImage: "mkdocs:local-dev"
+    pullImage: false
 ```
 
 ### Release

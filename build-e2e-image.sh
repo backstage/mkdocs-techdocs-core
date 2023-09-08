@@ -39,7 +39,7 @@ sed -i '' "s/^\(RUN pip install.*\)/${COPY_COMMAND}\1/" $DOCKERFILE
 sed -E -i '' "s/pip install mkdocs-techdocs-core==[0-9]+\.[0-9]+\.[0-9]+/pip install -e \/local-mkdocs-techdocs-core/" $DOCKERFILE
 
 # Build the image
-docker build -f $DOCKERFILE -t mkdocs:local-dev . || exit 1
+docker build -f $DOCKERFILE -t mkdocs:local-dev $TECHDOCS_CONTAINER_DIR || exit 1
 
 echo "================================================================================\n"
 echo "The docker image is built, now use it in your config: \n"

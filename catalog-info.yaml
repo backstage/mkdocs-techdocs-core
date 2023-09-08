@@ -4,5 +4,5 @@ metadata:
   name: mkdocs-techdocs-core
 spec:
   lifecycle: production
-  type: library
+  type: backstage-common-library
   owner: protean

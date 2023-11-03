@@ -21,6 +21,7 @@ from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
 from mkdocs.utils import warning_filter
 from mkdocs.contrib.search import SearchPlugin
+from mkdocs.config import config_options
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
 
@@ -31,6 +32,8 @@ TECHDOCS_DEFAULT_THEME = "material"
 
 
 class TechDocsCore(BasePlugin):
+    config_scheme = ("monorepo", config_options.Type(bool, default=True))
+
     def __init__(self):
         # This directory will be removed automatically once the docs are built
         # MkDocs needs a directory for the theme with the `techdocs_metadata.json` file
@@ -80,11 +83,12 @@ class TechDocsCore(BasePlugin):
 
         search_plugin = SearchPlugin()
         search_plugin.load_config({})
-
-        monorepo_plugin = MonorepoPlugin()
-        monorepo_plugin.load_config({})
         config["plugins"]["search"] = search_plugin
-        config["plugins"]["monorepo"] = monorepo_plugin
+
+        if self.config.get("monorepo"):
+            monorepo_plugin = MonorepoPlugin()
+            monorepo_plugin.load_config({})
+            config["plugins"]["monorepo"] = monorepo_plugin
 
         # Markdown Extensions
         if "markdown_extensions" not in config:

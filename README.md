@@ -25,6 +25,12 @@ plugins:
   - techdocs-core
 ```
 
+### Options
+
+| Option   | Description                        | Type | Default |
+| -------- | ---------------------------------- | ---- | ------- |
+| monorepo | Adds the monorepo plugin when true | bool | true    |
+
 ## Development
 
 ### Running Locally

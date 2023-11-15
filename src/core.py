@@ -70,7 +70,7 @@ class TechDocsCore(BasePlugin):
         config["theme"]["features"].append("navigation.footer")
         config["theme"]["features"].append("content.action.edit")
 
-        config["theme"]["palette"] = ""
+        config["theme"]["palette"] = {}
 
         config["theme"].static_templates.update({"techdocs_metadata.json"})
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)

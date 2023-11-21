@@ -3,5 +3,6 @@ kind: Component
 metadata:
   name: mkdocs-techdocs-core
 spec:
-  type: library
-  owner: protean
+  lifecycle: production
+  type: backstage-common-library
+  owner: techdocs-maintainers

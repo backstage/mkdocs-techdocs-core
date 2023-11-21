@@ -143,6 +143,11 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.3
+ - Bumped `mkdocs-material` (and its dependencies) from `9.1.3` to `9.2.7` causing a few changes:
+   - MkDocs dependency is now `1.5`
+ - `theme.palette` is now hardcoded to `{}` instead of `""` which caused some issues with some Material plugins
+
 ### 1.2.3
  - Bumped `pygments` to `2.16.1`, which also fixes a [vulnerability](https://github.com/advisories/GHSA-mrwq-x4v8-fh7p).
  - Update dependency `plantuml-markdown` to `3.9.2`.

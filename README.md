@@ -143,6 +143,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.3.1
+ - Bumped `pygments` to `2.17.2` which includes JSX support.
+
 ### 1.3
  - Bumped `mkdocs-material` (and its dependencies) from `9.1.3` to `9.2.7` causing a few changes:
    - MkDocs dependency is now `1.5`

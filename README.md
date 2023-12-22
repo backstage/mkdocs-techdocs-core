@@ -6,7 +6,7 @@ This is the base [Mkdocs](https://mkdocs.org) plugin used when using Mkdocs with
 
 ## Usage
 
-> Requires Python version >= 3.7
+> Requires Python version >= 3.8
 
 ```bash
 $ pip install mkdocs-techdocs-core
@@ -351,6 +351,6 @@ The pymdownx extension will be bumped too 8.0.0 in the near future.
 
 ## License
 
-Copyright 2020-2021 © The Backstage Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage
+Copyright 2020-2023 © The Backstage Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

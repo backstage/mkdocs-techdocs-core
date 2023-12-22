@@ -143,6 +143,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.3.2
+ - Bumped `pymdown-extensions` to `10.3.1` which add material.extensions support
+ - Removed support for `Python` version `3.7`
+
 ### 1.3.1
  - Bumped `pygments` to `2.17.2` which includes JSX support.
 

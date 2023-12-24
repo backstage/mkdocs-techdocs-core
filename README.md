@@ -6,7 +6,7 @@ This is the base [Mkdocs](https://mkdocs.org) plugin used when using Mkdocs with
 
 ## Usage
 
-> Requires Python version >= 3.7
+> Requires Python version >= 3.8
 
 ```bash
 $ pip install mkdocs-techdocs-core
@@ -142,6 +142,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 ## Changelog
 
 ### Unreleased
+
+### 1.3.2
+ - Bumped `pymdown-extensions` to `10.3.1` which add material.extensions support
+ - Removed support for `Python` version `3.7`
 
 ### 1.3.1
  - Bumped `pygments` to `2.17.2` which includes JSX support.
@@ -347,6 +351,6 @@ The pymdownx extension will be bumped too 8.0.0 in the near future.
 
 ## License
 
-Copyright 2020-2021 © The Backstage Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage
+Copyright 2020-2023 © The Backstage Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

@@ -28,7 +28,14 @@ jobs:
         run: |
           pip install wheel
           rm -rf dist
-          python setup.py bdist_wheel sdist --formats gztar
+          python setup.py bdist_wheel sdist --formats tar
+          pushd dist >/dev/null || exit
+            distrib=$(ls *.tar); distrib=${distrib/.tar/}
+            mkdir -p ${distrib}
+              cp ../requirements.txt ${distrib}
+              tar rvf ${distrib}.tar ${distrib}/requirements.txt && gzip ${distrib}.tar
+            rm -fr ${distrib}
+          popd >/dev/null || exit
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:

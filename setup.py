@@ -1,5 +1,5 @@
 """
-Copyright 2020 The Backstage Authors
+Copyright 2020-2024 The Backstage Authors
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
+
 from setuptools import setup, find_packages
 from os import path
 
@@ -27,7 +28,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="mkdocs-techdocs-core",
-    version="1.3.3",
+    version="1.3.4",
     description="The core MkDocs plugin used by Backstage's TechDocs as a wrapper around "
     "multiple MkDocs plugins and Python Markdown extensions",
     long_description=long_description,

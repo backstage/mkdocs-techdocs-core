@@ -143,6 +143,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.3.5
+ - Bumped `mkdocs-material` to `9.5.13` which adds support for card grids and grid layouts
+
 ### 1.3.3
  - Bumped `mkdocs-material` to `9.4.14` which add support for: Mermaid.js version 10.6.1, emoji extension and updated MkDocs to 1.5.3
  - Added tests for `Python` version `3.11`

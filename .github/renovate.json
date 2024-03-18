@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "extends": [
+    "config:recommended",
+    ":disableDependencyDashboard",
+    ":label(dependencies)",
+    ":gitSignOff"
+  ],
+
+  "ignoreDeps": ["mkdocs-material"],
+
+  "packageRules": [{ "matchCategories": ["python"], "rangeStrategy": "widen" }]
+}

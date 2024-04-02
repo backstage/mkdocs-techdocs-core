@@ -8,7 +8,8 @@
     ":gitSignOff"
   ],
 
-  "ignoreDeps": ["mkdocs-material"],
-
-  "packageRules": [{ "matchCategories": ["python"], "rangeStrategy": "widen" }]
+  "packageRules": [
+    { "matchCategories": ["python"], "rangeStrategy": "widen" },
+    { "matchPackageNames": ["mkdocs-material"], "allowedVersions": "<=9.15" }
+  ]
 }

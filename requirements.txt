@@ -1,7 +1,7 @@
 # The following are something akin to peer dependencies. They are represented
 # as ranges in order to support interoperability with other mkdocs plugins or
 # packages that might otherwise exist in an adopter's environment.
-mkdocs>=1.5
+mkdocs>=1.6
 Markdown>=3.2,<3.4
 
 # The following are more akin to direct dependencies. Each line represents one
@@ -9,7 +9,7 @@ Markdown>=3.2,<3.4
 # pinned to an exact version. Bumps should be accompanied by release notes
 # explaining what was added or fixed (or at least pointing to the underlying
 # release notes of the bumped package).
-mkdocs-material==9.5.13
+mkdocs-material==9.5.19
 markdown_inline_graphviz_extension==1.1.2
 mkdocs-monorepo-plugin==1.1.0
 plantuml-markdown==3.9.4

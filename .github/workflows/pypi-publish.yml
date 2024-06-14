@@ -37,8 +37,8 @@ jobs:
             rm -fr ${distrib}
           popd >/dev/null || exit
       - name: Publish a Python distribution to PyPI
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@v1.8.14
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_KEY }}
-          packages_dir: ./dist
+          packages-dir: ./dist

@@ -143,6 +143,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ### Unreleased
 
+### 1.3.6
+ - Bumped `mkdocs-material` to `9.5.26`.
+ 
 ### 1.3.5
  - Bumped `mkdocs-material` to `9.5.13` which adds support for card grids and grid layouts
 

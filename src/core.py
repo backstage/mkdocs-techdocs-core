@@ -75,7 +75,9 @@ class TechDocsCore(BasePlugin):
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
 
         # Plugins
-        use_material_search = config["plugins"]["techdocs-core"].config.get("material_search", False)
+        use_material_search = config["plugins"]["techdocs-core"].config.get(
+            "use_material_search", False
+        )
         del config["plugins"]["techdocs-core"]
 
         if use_material_search:

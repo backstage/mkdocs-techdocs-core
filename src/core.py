@@ -20,6 +20,7 @@ import os
 from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
 from mkdocs.contrib.search import SearchPlugin
+from material.plugins.search.plugin import SearchPlugin as MaterialSearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
 
@@ -74,9 +75,15 @@ class TechDocsCore(BasePlugin):
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
 
         # Plugins
+        use_material_search = config["plugins"]["techdocs-core"].config.get(
+            "use_material_search", False
+        )
         del config["plugins"]["techdocs-core"]
 
-        search_plugin = SearchPlugin()
+        if use_material_search:
+            search_plugin = MaterialSearchPlugin()
+        else:
+            search_plugin = SearchPlugin()
         search_plugin.load_config({})
 
         monorepo_plugin = MonorepoPlugin()

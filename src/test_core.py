@@ -111,3 +111,21 @@ class TestTechDocsCoreConfig(unittest.TestCase):
             final_config["mdx_configs"]["pymdownx.snippets"]["restrict_base_path"],
             True,
         )
+
+    def test_material_search(self):
+        self.plugin_collection["techdocs-core"].load_config(
+            {"use_material_search": True}
+        )
+        final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
+
+        self.assertEqual(
+            final_config["plugins"]["search"].__module__,
+            "material.plugins.search.plugin",
+        )
+
+    def test_default_search(self):
+        self.plugin_collection["techdocs-core"].load_config({})
+        final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
+        self.assertEqual(
+            final_config["plugins"]["search"].__module__, "mkdocs.contrib.search"
+        )

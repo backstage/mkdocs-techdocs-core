@@ -25,6 +25,14 @@ plugins:
   - techdocs-core
 ```
 
+(Optional) To use material theme search to generate the `search/search_index.json` (responsible for the search functionality in the TechDocs reader), you need to add the following configuration to your `mkdocs.yml`:
+
+```yaml
+plugins:
+  - techdocs-core:
+      use_material_search: true
+```
+
 ## Development
 
 ### Running Locally

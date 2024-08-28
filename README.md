@@ -149,6 +149,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### 1.4.1
+ - Introduced mkdocs-redirects plugin (v`1.2.1`). 
+
 ### 1.4.0
  - Updated minimum mkdocs dependency from `1.5` to `1.6`
    - Fixes issue [#187](https://github.com/backstage/mkdocs-techdocs-core/issues/187)

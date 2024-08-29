@@ -28,7 +28,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="mkdocs-techdocs-core",
-    version="1.4.1",
+    version="1.4.2",
     description="The core MkDocs plugin used by Backstage's TechDocs as a wrapper around "
     "multiple MkDocs plugins and Python Markdown extensions",
     long_description=long_description,
@@ -36,7 +36,7 @@ setup(
     keywords="mkdocs",
     url="https://github.com/backstage/mkdocs-techdocs-core",
     author="TechDocs Core",
-    author_email="pulp-fiction@spotify.com",
+    author_email="protean@spotify.com",
     license="Apache-2.0",
     python_requires=">=3.7",
     install_requires=required,

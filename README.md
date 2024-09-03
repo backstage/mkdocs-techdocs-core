@@ -149,6 +149,9 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### 1.4.2
+ - Fixes an issue where individual extension configurations were being ignored if the extension was included within `pymdownx.extra`. See [#147](https://github.com/backstage/mkdocs-techdocs-core/issues/147)
+
 ### 1.4.1
  - Introduced mkdocs-redirects plugin (v`1.2.1`). 
 

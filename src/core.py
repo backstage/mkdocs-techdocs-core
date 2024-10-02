@@ -23,6 +23,7 @@ from mkdocs.contrib.search import SearchPlugin
 from material.plugins.search.plugin import SearchPlugin as MaterialSearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
+from pymdownx.extra import extra_extensions
 
 log = logging.getLogger(__name__)
 
@@ -114,7 +115,6 @@ class TechDocsCore(BasePlugin):
         config["markdown_extensions"].append("pymdownx.mark")
         config["markdown_extensions"].append("pymdownx.smartsymbols")
         config["markdown_extensions"].append("pymdownx.snippets")
-        config["markdown_extensions"].append("pymdownx.superfences")
         config["markdown_extensions"].append("pymdownx.highlight")
         config["mdx_configs"]["pymdownx.highlight"] = {
             "linenums": True,
@@ -133,6 +133,17 @@ class TechDocsCore(BasePlugin):
             "custom_checkbox": True,
         }
         config["markdown_extensions"].append("pymdownx.tilde")
+
+        # merge individual extension configs under the pymdownx.extra extension namespace if individual extension is supplied by pymdownx.extra
+        # https://facelessuser.github.io/pymdown-extensions/extensions/extra/
+        if "pymdownx.extra" not in config["mdx_configs"]:
+            config["mdx_configs"]["pymdownx.extra"] = {}
+        for extension in extra_extensions:
+            if extension in config["mdx_configs"]:
+                config["mdx_configs"]["pymdownx.extra"][extension] = config[
+                    "mdx_configs"
+                ][extension]
+                del config["mdx_configs"][extension]
 
         config["markdown_extensions"].append("markdown_inline_graphviz")
         config["markdown_extensions"].append("plantuml_markdown")

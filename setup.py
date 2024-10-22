@@ -28,7 +28,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="mkdocs-techdocs-core",
-    version="1.4.2",
+    version="1.4.3",
     description="The core MkDocs plugin used by Backstage's TechDocs as a wrapper around "
     "multiple MkDocs plugins and Python Markdown extensions",
     long_description=long_description,
@@ -38,7 +38,7 @@ setup(
     author="TechDocs Core",
     author_email="protean@spotify.com",
     license="Apache-2.0",
-    python_requires=">=3.7",
+    python_requires=">=3.9",
     install_requires=required,
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -47,8 +47,14 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3 :: Only",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     packages=find_packages(),
-    entry_points={"mkdocs.plugins": ["techdocs-core = src.core:TechDocsCore"]},
+    entry_points={
+        "mkdocs.plugins": ["techdocs-core = techdocs_core.core:TechDocsCore"]
+    },
 )

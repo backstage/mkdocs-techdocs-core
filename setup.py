@@ -38,7 +38,7 @@ setup(
     author="TechDocs Core",
     author_email="protean@spotify.com",
     license="Apache-2.0",
-    python_requires=">=3.7",
+    python_requires=">=3.9",
     install_requires=required,
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -47,7 +47,11 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3 :: Only",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     packages=find_packages(),
     entry_points={

@@ -98,7 +98,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         }
         rendered = template.render(config=config)
         as_json = json.loads(rendered)
-        self.assertEquals(config, as_json)
+        self.assertEqual(config, as_json)
 
     def test_restrict_snippet_base_path(self):
         self.mkdocs_yaml_config["mdx_configs"] = {

@@ -149,6 +149,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### 1.5.0
+ - Renamed package namespace from `src` to `techdocs_core`
+ - Fix small deprecation in tests (`assertEquals` -> `assertEqual`) as it was deprecated since Python 3.2 and removed in 3.12
+
 ### 1.4.2
  - Fixes an issue where individual extension configurations were being ignored if the extension was included within `pymdownx.extra`. See [#147](https://github.com/backstage/mkdocs-techdocs-core/issues/147)
 

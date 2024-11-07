@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
       - name: Test with unittest
         run: |
-          python -m unittest src/test_core.py
+          python -m unittest techdocs_core/test_core.py
       - name: Uninstall dependencies
         run: |
           pip list --format=freeze | xargs pip uninstall -y

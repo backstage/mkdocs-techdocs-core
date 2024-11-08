@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.7]
+        python-version: [3.13]
 
     steps:
       # Publish mkdocs-techdocs-core to PyPI
@@ -22,7 +22,7 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@master
         with:
-          python-version: 3.7
+          python-version: ${{ matrix.python-version }}
       - name: Build Python distribution
         working-directory: .
         run: |

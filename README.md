@@ -149,61 +149,81 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### 1.5.1
+
+- Minimum supported Python version is now 3.9
+- Update dependency `mkdocs-material` to v9.5.46
+- Update dependency `mkdocs-redirects` to v1.2.2
+
 ### 1.5.0
- - Renamed package namespace from `src` to `techdocs_core`
- - Fix small deprecation in tests (`assertEquals` -> `assertEqual`) as it was deprecated since Python 3.2 and removed in 3.12
+
+- Renamed package namespace from `src` to `techdocs_core`
+- Fix small deprecation in tests (`assertEquals` -> `assertEqual`) as it was deprecated since Python 3.2 and removed in 3.12
 
 ### 1.4.2
- - Fixes an issue where individual extension configurations were being ignored if the extension was included within `pymdownx.extra`. See [#147](https://github.com/backstage/mkdocs-techdocs-core/issues/147)
+
+- Fixes an issue where individual extension configurations were being ignored if the extension was included within `pymdownx.extra`. See [#147](https://github.com/backstage/mkdocs-techdocs-core/issues/147)
 
 ### 1.4.1
- - Introduced mkdocs-redirects plugin (v`1.2.1`). 
+
+- Introduced mkdocs-redirects plugin (v`1.2.1`).
 
 ### 1.4.0
- - Updated minimum mkdocs dependency from `1.5` to `1.6`
-   - Fixes issue [#187](https://github.com/backstage/mkdocs-techdocs-core/issues/187)
- - mkdocs-material bumped to `9.5.27`
+
+- Updated minimum mkdocs dependency from `1.5` to `1.6`
+  - Fixes issue [#187](https://github.com/backstage/mkdocs-techdocs-core/issues/187)
+- mkdocs-material bumped to `9.5.27`
 
 ### 1.3.6
- - Bumped `mkdocs-material` to `9.5.26`.
- 
+
+- Bumped `mkdocs-material` to `9.5.26`.
+
 ### 1.3.5
- - Bumped `mkdocs-material` to `9.5.13` which adds support for card grids and grid layouts
+
+- Bumped `mkdocs-material` to `9.5.13` which adds support for card grids and grid layouts
 
 ### 1.3.3
- - Bumped `mkdocs-material` to `9.4.14` which add support for: Mermaid.js version 10.6.1, emoji extension and updated MkDocs to 1.5.3
- - Added tests for `Python` version `3.11`
+
+- Bumped `mkdocs-material` to `9.4.14` which add support for: Mermaid.js version 10.6.1, emoji extension and updated MkDocs to 1.5.3
+- Added tests for `Python` version `3.11`
 
 ### 1.3.2
- - Bumped `pymdown-extensions` to `10.3.1` which add material.extensions support
- - Removed support for `Python` version `3.7`
+
+- Bumped `pymdown-extensions` to `10.3.1` which add material.extensions support
+- Removed support for `Python` version `3.7`
 
 ### 1.3.1
- - Bumped `pygments` to `2.17.2` which includes JSX support.
+
+- Bumped `pygments` to `2.17.2` which includes JSX support.
 
 ### 1.3
- - Bumped `mkdocs-material` (and its dependencies) from `9.1.3` to `9.2.7` causing a few changes:
+
+- Bumped `mkdocs-material` (and its dependencies) from `9.1.3` to `9.2.7` causing a few changes:
    - MkDocs dependency is now `1.5`
- - `theme.palette` is now hardcoded to `{}` instead of `""` which caused some issues with some Material plugins
+- `theme.palette` is now hardcoded to `{}` instead of `""` which caused some issues with some Material plugins
 
 ### 1.2.3
- - Bumped `pygments` to `2.16.1`, which also fixes a [vulnerability](https://github.com/advisories/GHSA-mrwq-x4v8-fh7p).
- - Update dependency `plantuml-markdown` to `3.9.2`.
+
+- Bumped `pygments` to `2.16.1`, which also fixes a [vulnerability](https://github.com/advisories/GHSA-mrwq-x4v8-fh7p).
+- Update dependency `plantuml-markdown` to `3.9.2`.
 
 ### 1.2.2
- - Added config override of `pymdownx.snippets` for [security](https://github.com/facelessuser/pymdown-extensions/security/advisories/GHSA-jh85-wwv9-24hv). `restrict_base_path` will always be `true`. If you currently use snippets with files outside of the directory, those files will no longer be included. 
+
+- Added config override of `pymdownx.snippets` for [security](https://github.com/facelessuser/pymdown-extensions/security/advisories/GHSA-jh85-wwv9-24hv). `restrict_base_path` will always be `true`. If you currently use snippets with files outside of the directory, those files will no longer be included. 
 
 ### 1.2.1
- - Use latest version of `pymdown-extensions` which contains [security fixes](https://github.com/backstage/mkdocs-techdocs-core/pull/123).
+
+- Use latest version of `pymdown-extensions` which contains [security fixes](https://github.com/backstage/mkdocs-techdocs-core/pull/123).
 
 ### 1.2.0
- - Updated `mkdocs-material` (and its dependencies) from `8.1.11` to `9.1.3` causing a few changes:
-   -  Some `mkdocs-material` features were made opt-in v9. In order to preserve compatibility, they are now hardcoded as enabled by `mkdocs-techdocs-core`. The features are
-      -  `navigation.footer`
-      -  `content.action.edit`
-   -  `theme.palette` is now hardcoded to `""` to preserve previous behavior. Without hardcoding the palette, it gets the value `default`, causing unwanted visual changes. 
-   -  Some components e.g. admonitions have a slightly different look.
-   -  Minor color changes that can be avoided by also updating to the latest version of `@backstage/plugin-techdocs` which compensates these changes.
+
+- Updated `mkdocs-material` (and its dependencies) from `8.1.11` to `9.1.3` causing a few changes:
+  - Some `mkdocs-material` features were made opt-in v9. In order to preserve compatibility, they are now hardcoded as enabled by `mkdocs-techdocs-core`. The features are
+    - `navigation.footer`
+    - `content.action.edit`
+  - `theme.palette` is now hardcoded to `""` to preserve previous behavior. Without hardcoding the palette, it gets the value `default`, causing unwanted visual changes. 
+  - Some components e.g. admonitions have a slightly different look.
+  - Minor color changes that can be avoided by also updating to the latest version of `@backstage/plugin-techdocs` which compensates these changes.
 
 ### 1.1.7
 

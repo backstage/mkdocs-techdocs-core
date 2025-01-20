@@ -79,6 +79,9 @@ class TechDocsCore(BasePlugin):
         use_material_search = config["plugins"]["techdocs-core"].config.get(
             "use_material_search", False
         )
+        use_pymdownx_blocks = config["plugins"]["techdocs-core"].config.get(
+            "use_pymdownx_blocks", False
+        )
         del config["plugins"]["techdocs-core"]
 
         if use_material_search:
@@ -99,15 +102,64 @@ class TechDocsCore(BasePlugin):
         if "mdx_configs" not in config:
             config["mdx_configs"] = {}
 
-        config["markdown_extensions"].append("admonition")
         config["markdown_extensions"].append("toc")
         config["mdx_configs"]["toc"] = {
             "permalink": True,
         }
 
+        if use_pymdownx_blocks:
+            config["markdown_extensions"].append("pymdownx.blocks.admonition")
+            config["mdx_configs"]["pymdownx.blocks.admonition"] = {
+                "types": [
+                    "new",
+                    "settings",
+                    "note",
+                    "abstract",
+                    "info",
+                    "tip",
+                    "success",
+                    "question",
+                    "warning",
+                    "failure",
+                    "danger",
+                    "bug",
+                    "example",
+                    "quote"
+                ]
+            }
+            config["markdown_extensions"].append("pymdownx.blocks.details")
+            config["mdx_configs"]["pymdownx.blocks.details"] = {
+                "types": [
+                    {"name": "details-new", "class": "new"},
+                    {"name": "details-settings", "class": "settings"},
+                    {"name": "details-note", "class": "note"},
+                    {"name": "details-abstract", "class": "abstract"},
+                    {"name": "details-info", "class": "info"},
+                    {"name": "details-tip", "class": "tip"},
+                    {"name": "details-success", "class": "success"},
+                    {"name": "details-question", "class": "question"},
+                    {"name": "details-warning", "class": "warning"},
+                    {"name": "details-failure", "class": "failure"},
+                    {"name": "details-danger", "class": "danger"},
+                    {"name": "details-bug", "class": "bug"},
+                    {"name": "details-example", "class": "example"},
+                    {"name": "details-quote", "class": "quote"}
+                ]
+            }
+            config["markdown_extensions"].append("pymdownx.blocks.tab")
+            config["mdx_configs"]["pymdownx.blocks.tab"] = {
+                "alternate_style": True,
+            }
+        else:
+            config["markdown_extensions"].append("admonition")
+            config["markdown_extensions"].append("pymdownx.details")
+            config["markdown_extensions"].append("pymdownx.tabbed")
+            config["mdx_configs"]["pymdownx.tabbed"] = {
+                "alternate_style": True,
+            }
+
         config["markdown_extensions"].append("pymdownx.caret")
         config["markdown_extensions"].append("pymdownx.critic")
-        config["markdown_extensions"].append("pymdownx.details")
         config["markdown_extensions"].append("pymdownx.emoji")
         config["mdx_configs"]["pymdownx.emoji"] = {"emoji_generator": to_svg}
         config["markdown_extensions"].append("pymdownx.inlinehilite")
@@ -123,10 +175,6 @@ class TechDocsCore(BasePlugin):
         config["markdown_extensions"].append("pymdownx.extra")
         config["mdx_configs"]["pymdownx.betterem"] = {
             "smart_enable": "all",
-        }
-        config["markdown_extensions"].append("pymdownx.tabbed")
-        config["mdx_configs"]["pymdownx.tabbed"] = {
-            "alternate_style": True,
         }
         config["markdown_extensions"].append("pymdownx.tasklist")
         config["mdx_configs"]["pymdownx.tasklist"] = {

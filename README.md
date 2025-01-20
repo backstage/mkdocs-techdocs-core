@@ -33,7 +33,7 @@ plugins:
       use_material_search: true
 ```
 
-(Optional) To use [PyMdown Blocks Extensions](https://facelessuser.github.io/pymdown-extensions/extensions/blocks/api/) (replaces `admonitions`, `pymdownx.details` and `pymdownx.tabbed` extensions), you need to add the following configuration to your `mkdocs.yml`:
+(Optional) To use [PyMdown Blocks Extensions](https://facelessuser.github.io/pymdown-extensions/extensions/blocks/) (replaces `admonitions`, `pymdownx.details` and `pymdownx.tabbed` extensions), you need to add the following configuration to your `mkdocs.yml`:
 
 ```yaml
 plugins:

@@ -149,6 +149,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### 1.5.2
+
+- Update `markdown_inline_graphviz_extension` to use forked `markdown-graphviz-inline` instead due to abandonment of original dependency.
+
 ### 1.5.1
 
 - Minimum supported Python version is now 3.9

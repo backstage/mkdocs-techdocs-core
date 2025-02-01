@@ -138,12 +138,22 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         )
         final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
 
-        self.assertTrue("pymdownx.blocks.admonition" in final_config["markdown_extensions"])
-        self.assertTrue("pymdownx.blocks.details" in final_config["markdown_extensions"])
+        self.assertTrue(
+            "pymdownx.blocks.admonition" in final_config["markdown_extensions"]
+        )
+        self.assertTrue(
+            "pymdownx.blocks.details" in final_config["markdown_extensions"]
+        )
         self.assertTrue("pymdownx.blocks.tab" in final_config["markdown_extensions"])
-        self.assertTrue("types" in final_config["mdx_configs"]["pymdownx.blocks.admonition"])
-        self.assertTrue("types" in final_config["mdx_configs"]["pymdownx.blocks.details"])
-        self.assertTrue("alternate_style" in final_config["mdx_configs"]["pymdownx.blocks.tab"])
+        self.assertTrue(
+            "types" in final_config["mdx_configs"]["pymdownx.blocks.admonition"]
+        )
+        self.assertTrue(
+            "types" in final_config["mdx_configs"]["pymdownx.blocks.details"]
+        )
+        self.assertTrue(
+            "alternate_style" in final_config["mdx_configs"]["pymdownx.blocks.tab"]
+        )
         self.assertFalse("admonition" in final_config["markdown_extensions"])
         self.assertFalse("pymdownx.details" in final_config["markdown_extensions"])
         self.assertFalse("pymdownx.tabbed" in final_config["markdown_extensions"])
@@ -153,8 +163,12 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.plugin_collection["techdocs-core"].load_config({})
         final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
 
-        self.assertFalse("pymdownx.blocks.admonition" in final_config["markdown_extensions"])
-        self.assertFalse("pymdownx.blocks.details" in final_config["markdown_extensions"])
+        self.assertFalse(
+            "pymdownx.blocks.admonition" in final_config["markdown_extensions"]
+        )
+        self.assertFalse(
+            "pymdownx.blocks.details" in final_config["markdown_extensions"]
+        )
         self.assertFalse("pymdownx.blocks.tab" in final_config["markdown_extensions"])
         self.assertFalse("pymdownx.blocks.admonition" in final_config["mdx_configs"])
         self.assertFalse("pymdownx.blocks.details" in final_config["mdx_configs"])
@@ -162,4 +176,6 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertTrue("admonition" in final_config["markdown_extensions"])
         self.assertTrue("pymdownx.details" in final_config["markdown_extensions"])
         self.assertTrue("pymdownx.tabbed" in final_config["markdown_extensions"])
-        self.assertTrue("alternate_style" in final_config["mdx_configs"]["pymdownx.tabbed"])
+        self.assertTrue(
+            "alternate_style" in final_config["mdx_configs"]["pymdownx.tabbed"]
+        )

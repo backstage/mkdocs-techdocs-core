@@ -33,6 +33,14 @@ plugins:
       use_material_search: true
 ```
 
+(Optional) To use [PyMdown Blocks Extensions](https://facelessuser.github.io/pymdown-extensions/extensions/blocks/) (replaces `admonitions`, `pymdownx.details` and `pymdownx.tabbed` extensions), you need to add the following configuration to your `mkdocs.yml`:
+
+```yaml
+plugins:
+  - techdocs-core:
+      use_pymdownx_blocks: true
+```
+
 ## Development
 
 ### Running Locally
@@ -148,6 +156,10 @@ build container).
 We only use `material-mkdocs` as base styles because Backstage also uses the `Material UI` on the client-side. We don't expect people to use themes other than `Material UI` to maintain consistency across all Backstage pages (in other words, documentation pages have the same look and feel as any other Backstage page) and so we use the `BackstageTheme` configured in Front-end application as the source of truth for all application design tokens like colors, typography and etc. So here you can [see](https://github.com/backstage/backstage/blob/master/plugins/techdocs/src/reader/components/TechDocsReaderPageContent/dom.tsx#L160-L692) that some styles will always be overridden regardless of the `mkdocs-material` plugin theme settings and this can cause unexpected behavior for those who override the theme setting in a `mkdocs.yaml` file.
 
 ## Changelog
+
+### 1.5.3
+
+- Added support for PyMdown Blocks extensions
 
 ### 1.5.2
 

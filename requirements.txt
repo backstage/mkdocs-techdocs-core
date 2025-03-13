@@ -9,7 +9,7 @@ Markdown>=3.2,<3.8
 # pinned to an exact version. Bumps should be accompanied by release notes
 # explaining what was added or fixed (or at least pointing to the underlying
 # release notes of the bumped package).
-mkdocs-material==9.6.7
+mkdocs-material==9.6.8
 markdown-graphviz-inline==1.1.3
 mkdocs-monorepo-plugin==1.1.0
 plantuml-markdown==3.11.1

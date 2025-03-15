@@ -157,6 +157,10 @@ We only use `material-mkdocs` as base styles because Backstage also uses the `Ma
 
 ## Changelog
 
+### 1.5.4
+
+- Added proper plugin config to fix `Unrecognised configuration name` error when any config is provided
+
 ### 1.5.3
 
 - Added support for PyMdown Blocks extensions

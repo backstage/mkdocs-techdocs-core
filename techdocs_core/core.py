@@ -17,6 +17,8 @@
 import tempfile
 import logging
 import os
+
+from mkdocs.config import Config, config_options
 from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
 from mkdocs.contrib.search import SearchPlugin
@@ -30,7 +32,12 @@ log = logging.getLogger(__name__)
 TECHDOCS_DEFAULT_THEME = "material"
 
 
-class TechDocsCore(BasePlugin):
+class TechDocsCoreConfig(Config):
+    use_material_search = config_options.Type(bool, default=False)
+    use_pymdownx_blocks = config_options.Type(bool, default=False)
+
+
+class TechDocsCore(BasePlugin[TechDocsCoreConfig]):
     def __init__(self):
         # This directory will be removed automatically once the docs are built
         # MkDocs needs a directory for the theme with the `techdocs_metadata.json` file
@@ -76,12 +83,8 @@ class TechDocsCore(BasePlugin):
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
 
         # Plugins
-        use_material_search = config["plugins"]["techdocs-core"].config.get(
-            "use_material_search", False
-        )
-        use_pymdownx_blocks = config["plugins"]["techdocs-core"].config.get(
-            "use_pymdownx_blocks", False
-        )
+        use_material_search = self.config["use_material_search"]
+        use_pymdownx_blocks = self.config["use_pymdownx_blocks"]
         del config["plugins"]["techdocs-core"]
 
         if use_material_search:

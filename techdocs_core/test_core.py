@@ -12,25 +12,22 @@ def get_default_theme():
     return Theme(name="mkdocs")
 
 
-class DummyTechDocsCorePlugin(plugins.BasePlugin):
-    pass
-
-
 class TestTechDocsCoreConfig(unittest.TestCase):
     def setUp(self):
         self.techdocscore = TechDocsCore()
         self.plugin_collection = plugins.PluginCollection()
-        plugin = DummyTechDocsCorePlugin()
-        self.plugin_collection["techdocs-core"] = plugin
+        self.plugin_collection["techdocs-core"] = self.techdocscore
         self.mkdocs_yaml_config = {"plugins": self.plugin_collection}
         # Note: in reality, config["theme"] is always an instance of Theme
         self.mkdocs_yaml_config["theme"] = get_default_theme()
 
     def test_removes_techdocs_core_plugin_from_config(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
         self.assertTrue("techdocs-core" not in final_config["plugins"])
 
     def test_merge_default_config_and_user_config(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         self.mkdocs_yaml_config["markdown_extension"] = []
         self.mkdocs_yaml_config["mdx_configs"] = {}
         self.mkdocs_yaml_config["markdown_extension"].append(["toc"])
@@ -42,6 +39,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertTrue("mdx_truly_sane_lists" in final_config["markdown_extensions"])
 
     def test_override_default_config_with_user_config(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         self.mkdocs_yaml_config["markdown_extension"] = []
         self.mkdocs_yaml_config["mdx_configs"] = {}
         self.mkdocs_yaml_config["markdown_extension"].append(["toc"])
@@ -53,6 +51,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertTrue("mdx_truly_sane_lists" in final_config["markdown_extensions"])
 
     def test_theme_overrides_removed_when_name_is_not_material(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         # we want to force the theme mkdocs to this test
         self.mkdocs_yaml_config["theme"] = Theme(name="mkdocs")
         self.mkdocs_yaml_config["theme"]["features"] = ["navigation.sections"]
@@ -60,12 +59,14 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertFalse("navigation.sections" in final_config["theme"]["features"])
 
     def test_theme_overrides_when_name_is_material(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         self.mkdocs_yaml_config["theme"] = Theme(name=TECHDOCS_DEFAULT_THEME)
         self.mkdocs_yaml_config["theme"]["features"] = ["navigation.sections"]
         final_config = self.techdocscore.on_config(self.mkdocs_yaml_config)
         self.assertTrue("navigation.sections" in final_config["theme"]["features"])
 
     def test_theme_overrides_techdocs_metadata(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         self.mkdocs_yaml_config["theme"] = Theme(
             name=TECHDOCS_DEFAULT_THEME, static_templates=["my_static_temples"]
         )
@@ -76,6 +77,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         )
 
     def test_theme_overrides_dirs(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         custom_theme_dir = "/tmp/my_custom_theme_dir"
         self.mkdocs_yaml_config["theme"] = Theme(name=TECHDOCS_DEFAULT_THEME)
         self.mkdocs_yaml_config["theme"].dirs.append(custom_theme_dir)
@@ -86,6 +88,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         )
 
     def test_template_renders__multiline_value_as_valid_json(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         self.techdocscore.on_config(self.mkdocs_yaml_config)
         env = Environment(
             loader=PackageLoader(
@@ -103,6 +106,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertEqual(config, as_json)
 
     def test_restrict_snippet_base_path(self):
+        self.plugin_collection["techdocs-core"].load_config({})
         self.mkdocs_yaml_config["mdx_configs"] = {
             "pymdownx.snippets": {"restrict_base_path": False}
         }

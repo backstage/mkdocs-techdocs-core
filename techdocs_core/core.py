@@ -15,9 +15,9 @@
 """
 
 import tempfile
-import logging
 import os
-from mkdocs.plugins import BasePlugin
+from mkdocs.plugins import BasePlugin, get_plugin_logger
+from mkdocs.config import base, config_options as c
 from mkdocs.theme import Theme
 from mkdocs.contrib.search import SearchPlugin
 from material.plugins.search.plugin import SearchPlugin as MaterialSearchPlugin
@@ -25,12 +25,17 @@ from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
 from pymdownx.extra import extra_extensions
 
-log = logging.getLogger(__name__)
+log = get_plugin_logger(__name__)
 
 TECHDOCS_DEFAULT_THEME = "material"
 
 
-class TechDocsCore(BasePlugin):
+class TechDocsCoreConfig(base.Config):
+    use_material_search = c.Type(bool, default=False)
+    use_pymdownx_blocks = c.Type(bool, default=False)
+
+
+class TechDocsCore(BasePlugin[TechDocsCoreConfig]):
     def __init__(self):
         # This directory will be removed automatically once the docs are built
         # MkDocs needs a directory for the theme with the `techdocs_metadata.json` file
@@ -76,12 +81,11 @@ class TechDocsCore(BasePlugin):
         config["theme"].dirs.append(self.tmp_dir_techdocs_theme.name)
 
         # Plugins
-        use_material_search = config["plugins"]["techdocs-core"].config.get(
-            "use_material_search", False
-        )
-        use_pymdownx_blocks = config["plugins"]["techdocs-core"].config.get(
-            "use_pymdownx_blocks", False
-        )
+        use_material_search = self.config.use_material_search
+        use_pymdownx_blocks = self.config.use_pymdownx_blocks
+
+        log.info("[mkdocs-techdocs-core] Plugin configuration: %s", self.config)
+
         del config["plugins"]["techdocs-core"]
 
         if use_material_search:

@@ -2,7 +2,7 @@
 # as ranges in order to support interoperability with other mkdocs plugins or
 # packages that might otherwise exist in an adopter's environment.
 mkdocs>=1.6
-Markdown>=3.2,<3.8
+Markdown>=3.2,<3.9
 
 # The following are more akin to direct dependencies. Each line represents one
 # or more features that are provided by `techdocs-core`, and thus are always

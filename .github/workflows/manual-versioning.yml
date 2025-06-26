@@ -1,0 +1,33 @@
+name: manual-versioning
+on:
+  workflow_dispatch:
+    inputs:
+      levelBump:
+        description: "Version level bump to apply (e.g., patch, minor, major)"
+        required: true
+        default: "patch"
+        type: choice
+        options:
+          - "patch"
+          - "minor"
+          - "major"
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency: release
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python Semantic Release
+        uses: python-semantic-release/python-semantic-release@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: ${{ github.event.inputs.levelBump }}
+          verbosity: 2
+          no_operation_mode: true

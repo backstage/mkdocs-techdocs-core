@@ -28,6 +28,9 @@ classifiers = [
 ]
 dynamic = ["dependencies"]
 
+[project.entry-points]
+"mkdocs.plugins" = {"techdocs-core" = "techdocs_core.core:TechDocsCore"}
+
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
 

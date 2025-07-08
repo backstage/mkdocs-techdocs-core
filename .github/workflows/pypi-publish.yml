@@ -27,16 +27,7 @@ jobs:
         run: python -m pip install --upgrade pip build
       - name: Build Python distribution
         working-directory: .
-        run: |
-          rm -rf dist
-          python -m build
-          pushd dist >/dev/null || exit
-            distrib=$(ls *.tar); distrib=${distrib/.tar/}
-            mkdir -p ${distrib}
-              cp ../requirements.txt ${distrib}
-              tar rvf ${distrib}.tar ${distrib}/requirements.txt && gzip ${distrib}.tar
-            rm -fr ${distrib}
-          popd >/dev/null || exit
+        run: python -m build
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@v1.12.4
         with:

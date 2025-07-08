@@ -35,4 +35,7 @@ dynamic = ["dependencies"]
 dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools.packages.find]
-include = ["techdocs_core"] 
+include = ["techdocs_core"]
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]

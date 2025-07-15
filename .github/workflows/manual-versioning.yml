@@ -3,11 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       levelBump:
-        description: "Version level bump to apply (e.g., patch, minor, major)"
+        description: "Version level bump to apply (e.g., auto, patch, minor, major)."
         required: true
-        default: "patch"
+        default: "auto"
         type: choice
         options:
+          - "auto"
           - "patch"
           - "minor"
           - "major"
@@ -24,10 +25,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Python Semantic Release
+      - name: Python Semantic Release (Automatic)
+        if: github.event.inputs.levelBump == 'auto'
+        uses: python-semantic-release/python-semantic-release@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          verbosity: 2
+
+      - name: Python Semantic Release (Manual)
+        if: github.event.inputs.levelBump != 'auto'
         uses: python-semantic-release/python-semantic-release@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: ${{ github.event.inputs.levelBump }}
           verbosity: 2
-          no_operation_mode: true

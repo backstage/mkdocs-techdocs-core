@@ -1,6 +1,49 @@
 # CHANGELOG
 
 <!-- version list -->
+
+## v1.6.0 (2025-09-16)
+
+### Chores
+
+- **deps**: Update actions/checkout action to v5
+  ([`6b2a711`](https://github.com/backstage/mkdocs-techdocs-core/commit/6b2a7117cfb1b55bf239e58159b720dab9adda42))
+
+- **deps**: Update actions/setup-python action to v6
+  ([`df0222a`](https://github.com/backstage/mkdocs-techdocs-core/commit/df0222a63552459ae96d1a13441a1a57b2e286bb))
+
+- **deps**: Update actions/stale action to v10
+  ([`43bc714`](https://github.com/backstage/mkdocs-techdocs-core/commit/43bc714829bdc8fce799cc98f6925306352d0bcf))
+
+- **deps**: Update dependency markdown to >=3.2,<3.10
+  ([`864e43f`](https://github.com/backstage/mkdocs-techdocs-core/commit/864e43f82d70af736f246be6ffac09781feb1a09))
+
+- **deps**: Update dependency mkdocs-material to v9.6.16
+  ([`70d54a8`](https://github.com/backstage/mkdocs-techdocs-core/commit/70d54a872b1a153a698fca3a40e9f7773d580466))
+
+- **deps**: Update dependency mkdocs-material to v9.6.17
+  ([`4c39687`](https://github.com/backstage/mkdocs-techdocs-core/commit/4c39687c7f15df535861c9bf610a2e95d383fb83))
+
+- **deps**: Update dependency mkdocs-material to v9.6.18
+  ([`a0144ae`](https://github.com/backstage/mkdocs-techdocs-core/commit/a0144aec2192500b297be567db4c9be2c78e1485))
+
+- **deps**: Update dependency mkdocs-material to v9.6.19
+  ([`50d8cb0`](https://github.com/backstage/mkdocs-techdocs-core/commit/50d8cb09b934d519818a24c72b23e8bc4a34cc39))
+
+- **deps**: Update dependency pymdown-extensions to v10.16.1
+  ([`b4b4930`](https://github.com/backstage/mkdocs-techdocs-core/commit/b4b4930059cb4490f95e64d73f2344406fe6fbf6))
+
+### Continuous Integration
+
+- Use app token for semantic release workflow
+  ([`3f85c28`](https://github.com/backstage/mkdocs-techdocs-core/commit/3f85c286d14bf34766a039868d3a62481306fa1e))
+
+### Features
+
+- **ci**: Enable manual versioning
+  ([`b6cc7ad`](https://github.com/backstage/mkdocs-techdocs-core/commit/b6cc7adc24b9fc1f48a7fefa4bee980bd17a9724))
+
+
 ## v1.5.4 (2025-06-26)
 
 - Added proper plugin config to fix `Unrecognised configuration name` error when any config is provided

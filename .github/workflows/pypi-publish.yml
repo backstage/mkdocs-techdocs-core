@@ -6,9 +6,20 @@ on:
     paths:
       - ".github/workflows/pypi-publish.yml"
       - "pyproject.toml"
+  workflow_dispatch:
+    inputs:
+      notify_only:
+        description: "Default is to notify only since PyPi publication does not handle re-publication gracefully."
+        required: true
+        default: true
+        type: boolean
 
 jobs:
   build:
+    # If not manually triggered (event_name != workflow_dispatch)
+    # OR
+    # If manually triggered (event_name == workflow_dispatch) AND NOT notify_only
+    if: ${{ github.event_name != 'workflow_dispatch' || (github.event_name == 'workflow_dispatch' && !inputs.notify_only) }}
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -34,3 +45,32 @@ jobs:
           user: __token__
           password: ${{ secrets.PYPI_API_KEY }}
           packages_dir: ./dist
+
+  notify:
+    if: always()
+    name: "Notify Consumers"
+    needs: [build]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Implicit owner of "backstage" for these repos
+        repo: ["backstage", "techdocs-container"]
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.13
+      - name: "Generate token"
+        id: generate_token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.RELEASE_BOT_APP_ID }}
+          private-key: ${{ secrets.RELEASE_BOT_PRIVATE_KEY }}
+          repositories: ${{ matrix.repo }}
+      - name: Publish Event to Consumers
+        run: |
+          python .github/workflows/scripts/notify-consumers \
+            --token ${{ steps.generate_token.outputs.token }} \
+            --repo ${{ matrix.repo }}

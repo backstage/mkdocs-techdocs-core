@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 
 name = "mkdocs-techdocs-core"
-version = "1.6.0"
+version = "1.6.1"
 description = """The core MkDocs plugin used by Backstage's TechDocs as a wrapper around multiple MkDocs plugins and Python Markdown extensions"""
 readme = "README.md"
 requires-python = ">=3.9"

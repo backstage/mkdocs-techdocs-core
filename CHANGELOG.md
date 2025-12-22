@@ -2,6 +2,59 @@
 
 <!-- version list -->
 
+## v1.6.1 (2025-12-22)
+
+### Bug Fixes
+
+- **publishing**: Corrected license
+  ([#306](https://github.com/backstage/mkdocs-techdocs-core/pull/306),
+  [`65ae281`](https://github.com/backstage/mkdocs-techdocs-core/commit/65ae281da6981bcf40d6dbd5df3ebcdd8e9d394d))
+
+### Chores
+
+- **deps**: Update actions/checkout action to v6
+  ([`62dc850`](https://github.com/backstage/mkdocs-techdocs-core/commit/62dc8501040807206c98583ceb9c9612a43c7750))
+
+- **deps**: Update actions/stale action to v10.1.0
+  ([`8c382b1`](https://github.com/backstage/mkdocs-techdocs-core/commit/8c382b173c63824dd6242ca8590b522460d64e53))
+
+- **deps**: Update actions/stale action to v10.1.1
+  ([`eca0bdb`](https://github.com/backstage/mkdocs-techdocs-core/commit/eca0bdb9f8629965ccb5ec149c9e2f2dba5081ad))
+
+- **deps**: Update dependency markdown to >=3.2,<3.11
+  ([`fff85f8`](https://github.com/backstage/mkdocs-techdocs-core/commit/fff85f876d54f06016d56125bf95f6df584cabbe))
+
+- **deps**: Update dependency mkdocs-material to v9.6.20
+  ([`22fbb4b`](https://github.com/backstage/mkdocs-techdocs-core/commit/22fbb4bd1e399eed13e6a1a3b074e0452172ae2c))
+
+- **deps**: Update dependency mkdocs-material to v9.6.21
+  ([`16fbf7d`](https://github.com/backstage/mkdocs-techdocs-core/commit/16fbf7d9a896e0ad0f56f06979a1d2eef927ab66))
+
+- **deps**: Update dependency mkdocs-material to v9.6.22
+  ([`9aa00c4`](https://github.com/backstage/mkdocs-techdocs-core/commit/9aa00c4499e16e4bfec970900e9e832d6ac2c8e2))
+
+- **deps**: Update dependency mkdocs-material to v9.6.23
+  ([`33a37d3`](https://github.com/backstage/mkdocs-techdocs-core/commit/33a37d37818a09d855b95f7c291004613b379976))
+
+- **deps**: Update dependency mkdocs-material to v9.7.0
+  ([`5d8ec91`](https://github.com/backstage/mkdocs-techdocs-core/commit/5d8ec919e0a5daf52ac374a1641cfe6f6362150b))
+
+- **deps**: Update dependency mkdocs-material to v9.7.1
+  ([`e5fc05c`](https://github.com/backstage/mkdocs-techdocs-core/commit/e5fc05cb4dd3900820b4e8327b2d08b22d859667))
+
+- **deps**: Update dependency pymdown-extensions to v10.17.1
+  ([`0a77ef8`](https://github.com/backstage/mkdocs-techdocs-core/commit/0a77ef84af3fb94cae10ed088cd728f6ff9d709d))
+
+- **deps**: Update dependency pymdown-extensions to v10.17.2
+  ([`94f5d40`](https://github.com/backstage/mkdocs-techdocs-core/commit/94f5d40b50991fa0ec5e907a6989ae4183140b79))
+
+- **deps**: Update dependency pymdown-extensions to v10.19.1
+  ([`b41be31`](https://github.com/backstage/mkdocs-techdocs-core/commit/b41be3157487acd33946b5f558aeb104175fa12c))
+
+- **deps**: Update dependency python to 3.14
+  ([`2c0268d`](https://github.com/backstage/mkdocs-techdocs-core/commit/2c0268d598ed5d9f33ab0b815dde33d0ad75ed70))
+
+
 ## v1.6.0 (2025-09-16)
 
 ### Chores

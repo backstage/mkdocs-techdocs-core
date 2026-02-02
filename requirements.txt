@@ -22,3 +22,5 @@ mkdocs-redirects==1.2.2
 # around incompatible/conflicting underlying dependencies. Each dependency
 # should include a comment explaining why it is needed, and under what
 # circumstances it can be removed in the future.
+# Pinned click to avoid issues with autoreload https://github.com/squidfunk/mkdocs-material/issues/8478
+click<=8.2.2

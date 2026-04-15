@@ -2,6 +2,55 @@
 
 <!-- version list -->
 
+## v1.6.2 (2026-04-15)
+
+### Bug Fixes
+
+- Reload broken with latest click
+  ([`231151f`](https://github.com/backstage/mkdocs-techdocs-core/commit/231151f80655d79e80ff05e4ac67a1de87e6d4c8))
+
+### Chores
+
+- **deps**: Update actions/create-github-app-token action to v3
+  ([`babbefd`](https://github.com/backstage/mkdocs-techdocs-core/commit/babbefd051141b5c8b9aa901813cb1ea4956e85c))
+
+- **deps**: Update actions/stale action to v10.2.0
+  ([`f923919`](https://github.com/backstage/mkdocs-techdocs-core/commit/f923919cd5ee41c6d4ac6230b64701a5764dcc0d))
+
+- **deps**: Update dependency click to <=8.3.2
+  ([`7ceb324`](https://github.com/backstage/mkdocs-techdocs-core/commit/7ceb324b4f338efbf22390839639a42944608580))
+
+- **deps**: Update dependency mkdocs-material to v9.7.2
+  ([`9a59a34`](https://github.com/backstage/mkdocs-techdocs-core/commit/9a59a347b82b4c4750ddb2d0d81946933d75a661))
+
+- **deps**: Update dependency mkdocs-material to v9.7.5
+  ([`fd9700a`](https://github.com/backstage/mkdocs-techdocs-core/commit/fd9700ad10834d7d742d95351186f14ae5c99c8f))
+
+- **deps**: Update dependency mkdocs-material to v9.7.6
+  ([`81f2069`](https://github.com/backstage/mkdocs-techdocs-core/commit/81f20694614cd4719f8590a63b90cddb7fcdd524))
+
+- **deps**: Update dependency mkdocs-redirects to v1.2.3
+  ([`81cda39`](https://github.com/backstage/mkdocs-techdocs-core/commit/81cda39fe069732a241d59fdc97db1ae9b74e607))
+
+- **deps**: Update dependency pygments to v2.20.0 [security]
+  ([`3487e79`](https://github.com/backstage/mkdocs-techdocs-core/commit/3487e794614b3512640954792ae883c15f4fe7a5))
+
+- **deps**: Update dependency pymdown-extensions to v10.20
+  ([`16a6ade`](https://github.com/backstage/mkdocs-techdocs-core/commit/16a6ade45bd01d33c9de1aa4e610aa732831a158))
+
+- **deps**: Update dependency pymdown-extensions to v10.20.1
+  ([`8ec37f8`](https://github.com/backstage/mkdocs-techdocs-core/commit/8ec37f878b9cf52dfc2296735998fdc7738010f3))
+
+- **deps**: Update dependency pymdown-extensions to v10.21
+  ([`0ab5e5b`](https://github.com/backstage/mkdocs-techdocs-core/commit/0ab5e5b990323f52025e4aa6a08807d9be600be5))
+
+- **deps**: Update dependency pymdown-extensions to v10.21.2
+  ([`c4136a6`](https://github.com/backstage/mkdocs-techdocs-core/commit/c4136a6939a1e6f1fa51742b81c38104be09df22))
+
+- **deps**: Update pypa/gh-action-pypi-publish action to v1.14.0
+  ([`4068cfd`](https://github.com/backstage/mkdocs-techdocs-core/commit/4068cfda15a0697ca94b1d51638a0463880b7264))
+
+
 ## v1.6.1 (2025-12-22)
 
 ### Bug Fixes

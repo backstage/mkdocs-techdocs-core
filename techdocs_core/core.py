@@ -22,6 +22,7 @@ from mkdocs.config import Config, config_options
 from mkdocs.plugins import BasePlugin
 from mkdocs.theme import Theme
 from mkdocs.contrib.search import SearchPlugin
+from admonitions.admonition import AdmonitionConverter
 from material.plugins.search.plugin import SearchPlugin as MaterialSearchPlugin
 from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
 from pymdownx.emoji import to_svg
@@ -95,8 +96,11 @@ class TechDocsCore(BasePlugin[TechDocsCoreConfig]):
 
         monorepo_plugin = MonorepoPlugin()
         monorepo_plugin.load_config({})
+        gh_admonitions_plugin = AdmonitionConverter()
+        gh_admonitions_plugin.load_config({})
         config["plugins"]["search"] = search_plugin
         config["plugins"]["monorepo"] = monorepo_plugin
+        config["plugins"]["gh-admonitions"] = gh_admonitions_plugin
 
         # Markdown Extensions
         if "markdown_extensions" not in config:

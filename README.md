@@ -111,6 +111,7 @@ TechDocs Core plugin:
 
 - [search](https://www.mkdocs.org/user-guide/configuration/#search): A search plugin is provided by default with MkDocs which uses [lunr.js](https://lunrjs.com/) as a search engine.
 - [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin): This plugin enables you to build multiple sets of documentation in a single MkDocs project. It is designed to address writing documentation in Spotify's largest and most business-critical codebases (typically monoliths or monorepos).
+- [gh-admonitions](https://github.com/PGijsbers/admonitions): This plugin converts GitHub alert syntax, such as `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and `> [!CAUTION]`, to MkDocs Material admonitions.
 
 **Extensions**:
 

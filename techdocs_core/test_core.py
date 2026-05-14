@@ -129,6 +129,18 @@ class TestTechDocsCore(unittest.TestCase):
             final_config["plugins"]["search"].__module__, "mkdocs.contrib.search"
         )
 
+    def test_gh_admonitions(self):
+        final_config = self.techdocscore.on_config(self.techdocscore.config)
+
+        self.assertEqual(
+            final_config["plugins"]["gh-admonitions"].__module__,
+            "admonitions.admonition",
+        )
+        self.assertEqual(
+            final_config["plugins"]["gh-admonitions"].__class__.__name__,
+            "AdmonitionConverter",
+        )
+
     def test_pymdownx_blocks(self):
         self.techdocscore.config["use_pymdownx_blocks"] = True
         final_config = self.techdocscore.on_config(self.techdocscore.config)

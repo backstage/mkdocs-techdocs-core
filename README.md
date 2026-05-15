@@ -134,8 +134,8 @@ TechDocs Core plugin:
   - tabbed: Tabbed allows for tabbed Markdown content.
   - tasklist: Tasklist allows inserting lists with check boxes.
   - tilde: Tilde is syntactically built around the ~ character. It adds support for inserting subscripts and adds an easy way to place text in a <_del_> tag.
-- [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/): A Python Markdown extension replaces inline Graphviz definitions with inline SVGs or PNGs.
-  Activate the inline_graphviz extension using the [usage instructions](https://github.com/sprin/markdown-inline-graphviz#usage).
+- [markdown_inline_graphviz](https://pypi.org/project/markdown-graphviz-inline/): A Python Markdown extension replaces inline Graphviz definitions with inline SVGs or PNGs.
+  Activate the markdown_inline_graphviz extension using the [usage instructions](https://github.com/backstage/markdown-inline-graphviz#usage).
 
 - [plantuml_markdown](https://pypi.org/project/plantuml-markdown/): This plugin implements a block extension which can be used to specify a PlantUML diagram which will be converted into an image and inserted in the document.
 

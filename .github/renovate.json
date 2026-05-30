@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Renovate configuration for mkdocs-techdocs-core. Validated by .github/workflows/validate-renovate.yml on every PR that touches this file.",
 
   "extends": [
     "config:recommended",

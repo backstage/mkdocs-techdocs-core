@@ -2,6 +2,43 @@
 
 <!-- version list -->
 
+## v1.7.0 (2026-06-10)
+
+### Chores
+
+- **deps**: Update actions/stale action to v10.3.0
+  ([`9468714`](https://github.com/backstage/mkdocs-techdocs-core/commit/946871467adbc39b24461b09e6016e3e4bdb942c))
+
+- **deps**: Update dependency click to <=8.3.3
+  ([`be70b3c`](https://github.com/backstage/mkdocs-techdocs-core/commit/be70b3c33dff7be98f7ac26e5d15393a22e881f8))
+
+- **deps**: Update dependency click to <=8.4.0
+  ([`32cda9c`](https://github.com/backstage/mkdocs-techdocs-core/commit/32cda9cc9dadc112b130acfd3985bc7d610d103b))
+
+- **deps**: Update dependency click to <=8.4.1
+  ([`be1b5e1`](https://github.com/backstage/mkdocs-techdocs-core/commit/be1b5e1967ac5f3e74c8275294f42252e999d6e3))
+
+- **deps**: Update dependency plantuml-markdown to v3.11.2
+  ([`50b4daf`](https://github.com/backstage/mkdocs-techdocs-core/commit/50b4daf28b46fe0dafb7cf632f610b35a080f9a8))
+
+- **deps**: Update dependency pymdown-extensions to v10.21.3
+  ([`1828820`](https://github.com/backstage/mkdocs-techdocs-core/commit/1828820196b39e8c11f8dc6242eca7019ee5e5af))
+
+- **deps**: Update rinchsan/renovate-config-validator action to v0.2.1
+  ([`a960e0d`](https://github.com/backstage/mkdocs-techdocs-core/commit/a960e0dae686e7807d2c1c2e17945fb81fb357ef))
+
+### Documentation
+
+- Update links to markdown_inline_graphviz
+  ([`3e96f4c`](https://github.com/backstage/mkdocs-techdocs-core/commit/3e96f4c65819a240e714cd1a007e6bc10d386cf6))
+
+### Features
+
+- Include gh-admonitions by default
+  ([#345](https://github.com/backstage/mkdocs-techdocs-core/pull/345),
+  [`0fbb148`](https://github.com/backstage/mkdocs-techdocs-core/commit/0fbb148a736d860d13c7e69a4f1ce668f439db41))
+
+
 ## v1.6.2 (2026-04-15)
 
 ### Bug Fixes

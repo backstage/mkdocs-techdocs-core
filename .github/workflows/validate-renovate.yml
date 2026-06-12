@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/renovate.json5'
+      - '.github/renovate.json'
 
 jobs:
   validate:
@@ -17,4 +17,4 @@ jobs:
       - name: Validate
         uses: rinchsan/renovate-config-validator@v0.2.1
         with:
-          pattern: '*.json5'
+          pattern: '.github/renovate.json'

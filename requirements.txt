@@ -23,5 +23,8 @@ mkdocs-redirects==1.2.3
 # around incompatible/conflicting underlying dependencies. Each dependency
 # should include a comment explaining why it is needed, and under what
 # circumstances it can be removed in the future.
-# Pinned click to avoid issues with autoreload https://github.com/squidfunk/mkdocs-material/issues/8478
-click<=8.4.2
+# Exclude click 8.3.* which broke mkdocs serve autoreload (fixed in 8.4.0).
+# Other bounds are inherited from transitive deps (e.g. mkdocs).
+# https://github.com/squidfunk/mkdocs-material/issues/8478
+# https://github.com/pallets/click/issues/3403
+click!=8.3.*

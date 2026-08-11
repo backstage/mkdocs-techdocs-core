@@ -6,7 +6,7 @@ This is the base [Mkdocs](https://mkdocs.org) plugin used when using Mkdocs with
 
 ## Usage
 
-> Requires Python version >= 3.8
+> Requires Python version >= 3.9
 
 ```bash
 $ pip install mkdocs-techdocs-core

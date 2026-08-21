@@ -2,6 +2,51 @@
 
 <!-- version list -->
 
+## v1.7.1 (2026-08-21)
+
+### Bug Fixes
+
+- **deps**: Exclude click 8.3.* to restore autoreload
+  ([`5c76d60`](https://github.com/backstage/mkdocs-techdocs-core/commit/5c76d60a2e2fd62792b7ba2dcfc5b9018d02927e))
+
+### Chores
+
+- **deps**: Update actions/checkout action to v7
+  ([`d03a179`](https://github.com/backstage/mkdocs-techdocs-core/commit/d03a179ca17e28d9777a2b093f0365654567e074))
+
+- **deps**: Update actions/setup-python action to v7
+  ([`4c42a24`](https://github.com/backstage/mkdocs-techdocs-core/commit/4c42a2417f1a2903457e8aa78b259f410ff261b5))
+
+- **deps**: Update actions/stale action to v10.4.0
+  ([`4cb4492`](https://github.com/backstage/mkdocs-techdocs-core/commit/4cb4492fbd9777cff851a988f8777162a04b5850))
+
+- **deps**: Update actions/stale action to v11
+  ([`a688102`](https://github.com/backstage/mkdocs-techdocs-core/commit/a68810249110b4a0da4f686243ba3db8a3c905a2))
+
+- **deps**: Update dependency click to <=8.4.2
+  ([`fb049b3`](https://github.com/backstage/mkdocs-techdocs-core/commit/fb049b3f5feb3fb7b77943a4411d46df63856dac))
+
+- **deps**: Update dependency mkdocs-material to v9.7.7
+  ([`f04967e`](https://github.com/backstage/mkdocs-techdocs-core/commit/f04967e536f9fc26301b1d8780ed767a77ecd48c))
+
+- **deps**: Update dependency pygments to v2.21.0
+  ([`03642d0`](https://github.com/backstage/mkdocs-techdocs-core/commit/03642d02cb85e2ec9fd37b95e09cc1dfcd2750ba))
+
+- **deps**: Update dependency pymdown-extensions to v11
+  ([`472a35d`](https://github.com/backstage/mkdocs-techdocs-core/commit/472a35da60c13a33f8d0242c984dae62e68561cc))
+
+- **deps**: Update pypa/gh-action-pypi-publish action to v1.14.1
+  ([`cb190ae`](https://github.com/backstage/mkdocs-techdocs-core/commit/cb190aefcb7f62d7060ecd73077950385d8689d8))
+
+- **deps**: Update pypa/gh-action-pypi-publish action to v1.14.2
+  ([`331049c`](https://github.com/backstage/mkdocs-techdocs-core/commit/331049c9e7c6829089889d5a5eda6a0546c2163e))
+
+### Documentation
+
+- Update required Python version to >=3.9
+  ([`67dfe0d`](https://github.com/backstage/mkdocs-techdocs-core/commit/67dfe0dbf62c0b4d474dbfcb0adc594a42e29578))
+
+
 ## v1.7.0 (2026-06-10)
 
 ### Chores

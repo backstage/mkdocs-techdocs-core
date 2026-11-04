@@ -1,7 +1,11 @@
 # The following are something akin to peer dependencies. They are represented
 # as ranges in order to support interoperability with other mkdocs plugins or
 # packages that might otherwise exist in an adopter's environment.
-mkdocs>=1.6
+# mkdocs is capped below 2.0: MkDocs 2.0 is a ground-up rewrite with no plugin
+# system and TOML-based config, and is incompatible with techdocs-core and
+# Material for MkDocs. See:
+# https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/
+mkdocs>=1.6,<2
 Markdown>=3.2,<3.12
 
 # The following are more akin to direct dependencies. Each line represents one
